@@ -1,0 +1,78 @@
+/* this is css. */
+#header {
+  color: #5b83ad;
+}
+#body {
+  background-color: #5b83ad;
+}
+.bordered {
+  border-top: dotted 1px black;
+  border-bottom: solid 1px black;
+}
+#menu a {
+  color: #111;
+  border-top: dotted 1px black;
+  border-bottom: solid 1px black;
+}
+.post a {
+  color: red;
+  border-top: dotted 1px black;
+  border-bottom: solid 1px black;
+}
+#header {
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+.button {
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+#body {
+  border: 1px solid black;
+}
+/* TODO 5. Ƕ��
+#header {
+  color : black;
+}
+#header .nav {
+  font-size: 15px;
+}
+#header .logo {
+  width : 300px;
+}
+#header .logo:hover {
+  text-decoration: none;
+}*/
+#header {
+  color: black;
+}
+#header .nav {
+  font-size: 15px;
+}
+#header .logo {
+  width: 300px;
+}
+#header .logo:hover {
+  text-decoration: none;
+}
+.col-md-1 {
+  width: 82px;
+}
+/*
+  TODO 8. ����Less�ļ�
+  TODO   @import "path"
+  TODO Less��CSS��@import������
+  TODO * CSS��@import - ����ʱ���ض���CSS�ļ�
+  TODO * Less��@import - ֻ������һ��CSS�ļ�
+*/
+.box {
+  color: #fe33ac;
+  border-color: #fdcdea;
+}
+.box div {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}

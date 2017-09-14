@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>网格布局案例</title>
+  <link rel="stylesheet" href="responsive.css"/>
+  <style>
+    #nav {
+      height : 70px;
+      background : black;
+    }
+    #container {
+      height : 500px;
+      background : greenyellow;
+    }
+    #logo,#body,#ass {
+      height : 400px;
+      border : 1px solid black;
+    }
+    #footer {
+      height : 150px;
+      background : blue;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- TODO 导航条 - 12列 -->
+  <div id="nav" class="col-12">
+    <h1>导航条</h1>
+  </div>
+  <!-- TODO 页面主体容器
+       TODO * 页面的LOGO - 3列
+       TODO * 轮播图 - 6列
+       TODO * 广告 - 3列
+  -->
+  <div id="container">
+    <div id="logo" class="col-3">
+      <h3>LOGO</h3>
+    </div>
+    <div id="body" class="col-6">
+      <h3>轮播图</h3>
+    </div>
+    <div id="ass" class="col-3">
+      <h3>广告</h3>
+    </div>
+  </div>
+  <!-- TODO 页脚 - 12列-->
+  <div id="footer" class="col-12">
+    <h3>页脚</h3>
+  </div>
+</body>
+</html>

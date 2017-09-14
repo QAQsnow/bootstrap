@@ -1,0 +1,1949 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<title>BOOTSTRAP第一天笔记</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+<style type="text/css">
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+</style>
+
+<style type="text/css">
+pre.line-numbers {
+	position: relative;
+	padding-left: 3.8em;
+	counter-reset: linenumber;
+}
+
+pre.line-numbers > code {
+	position: relative;
+}
+
+.line-numbers .line-numbers-rows {
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	font-size: 100%;
+	left: -3.8em;
+	width: 3em; /* works for line-numbers below 1000 lines */
+	letter-spacing: -1px;
+	border-right: 1px solid #999;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+}
+
+	.line-numbers-rows > span {
+		pointer-events: none;
+		display: block;
+		counter-increment: linenumber;
+	}
+
+		.line-numbers-rows > span:before {
+			content: counter(linenumber);
+			color: #999;
+			display: block;
+			padding-right: 0.8em;
+			text-align: right;
+		}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">BOOTSTRAP第一天笔记</h1>
+
+<h2 id="toc_1">响应式页面</h2>
+
+<h3 id="toc_2">响应式页面概述</h3>
+
+<h4 id="toc_3">1. 什么是响应式页面</h4>
+
+<p>响应式网页（RWD，Responsive Web Design），2010年5月由Ethan Marcotte提出。简而言之，就是一个网站能够针对多个终端提供不同的显示样式，而不是针对每个终端制作一个特定的版本。</p>
+
+<p>由于智能手机和平板电脑的兴起，网站页面的制作不仅要满足PC端浏览器的显示，还要满足智能手机浏览器的显示或者平板电脑浏览器的显示。（<strong>PC端、智能手机或平板电脑的浏览器之间的区别，主要集中在分辨率的不同。</strong>）</p>
+
+<h4 id="toc_4">2. 为什么需要响应式页面</h4>
+
+<p>想要同时满足PC端、智能手机和平板电脑浏览器的正常显示，实际上有以下两种实现方式：</p>
+
+<p>a. 分别针对PC端、智能手机和平板电脑的浏览器制作特定的页面。例如 <a href="https://www.tmall.com/">https://www.tmall.com/</a></p>
+
+<ul>
+<li>优点：用户体验好，适合复杂页面。</li>
+<li>缺点：工作量大，不够灵活。</li>
+</ul>
+
+<p>b. 制作一个页面同时满足PC端、智能手机和平板电脑的浏览器显示。例如 <a href="http://www.intel.cn/">http://www.intel.cn/</a></p>
+
+<ul>
+<li>优点：比较灵活，一个页面适应不同终端。</li>
+<li>缺点：页面加载时间长，效率降低。</li>
+</ul>
+
+<p>如果PC端显示的页面与智能手机或平板电脑显示的页面不同时，建议选择 <em>a</em> 方案。比如智能手机端的可以利用 GPS 定位当前位置等不同于PC端的功能。但大多数网站的页面，无论是PC端还是智能手机或平板电脑显示的内容基本相同，建议选择 <em>b</em> 方案。</p>
+
+<h4 id="toc_5">3. 响应式页面的构成</h4>
+
+<p>目前实现响应式页面可以通过以下两种方式：</p>
+
+<p>a. 使用框架实现，例如 <a href="https://getbootstrap.com">Bootstrap</a> 等。这种方式开发响应式页面更快速、简单，但由于CSS样式是集成式的，导致页面样式相似，没有特点。</p>
+
+<p>b. 手写方式实现。这种方式开发响应式页面速度比较慢、代码多，但可以根据网站特点定制CSS样式。</p>
+
+<p>手写方式需要使用到以下几种技术：</p>
+
+<ul>
+<li>流式网格布局</li>
+<li>CSS3 的媒体查询</li>
+<li>相对单位替换绝对单位</li>
+</ul>
+
+<h3 id="toc_6">测试响应式页面</h3>
+
+<h4 id="toc_7">1. 如何测试响应式页面</h4>
+
+<p>测试响应式页面可以通过以下三种方式：</p>
+
+<ul>
+<li>通过真实设备进行测试。这种方式进行测试效果最好，但也是最复杂，并且需要不同分辨率的设备，成本较高。</li>
+<li>通过第三方模拟器进行测试。这种方式一般都是针对智能手机终端研发工具自带，需要在电脑安装不同开发工具，比较麻烦，并且性能较差。或者通过在线测试网站进行测试，测试周期较长。</li>
+<li>通过浏览器自带的设备模拟器进行测试。这种方式是最方便的，主流浏览器都自带了设备模拟器，并且测试效果较好。</li>
+</ul>
+
+<h4 id="toc_8">2. 使用浏览器测试</h4>
+
+<blockquote>
+<p>以 Chrome 浏览器为例。</p>
+</blockquote>
+
+<p>打开 Chrome 浏览器，点击右上角的菜单，选择“更多工具”中的“开发者工具”。（<strong>Windows操作系统版本的 Chrome 浏览器可以通过 F12 快捷键直接打开。</strong>）</p>
+
+<p><strong>值得注意的是：</strong></p>
+
+<ul>
+<li>每次更换测试设备时，需要重新刷新页面显示。</li>
+<li>有些功能无法正常测试，例如电话薄、摄像头等。</li>
+</ul>
+
+<h4 id="toc_9">3. 使用第三方工具测试</h4>
+
+<h4 id="toc_10">4. 使用真实设备测试</h4>
+
+<h3 id="toc_11">编写响应式页面</h3>
+
+<h4 id="toc_12">1. viewport元元素</h4>
+
+<h5 id="toc_13">1）什么是 viewport ？</h5>
+
+<p>viewport 被翻译为“视区”，表示页面的可视区域。通过 HTML 页面的 meta 元元素进行设置，是响应式页面设计的必备内容。</p>
+
+<p>移动端浏览器在一个通常比屏幕更宽的虚拟“窗口”（视口）中渲染页面，从而无序将所有页面都压缩进小屏幕里（那样会把很多没有针对移动端进行优化的站点打乱）。用户可以通过平移和缩放来浏览页面的不同区域。</p>
+
+<p>通过设置 viewport 元元素可以允许开发者控制显示的尺寸及比例。如今大部分移动端浏览器都支持 viewport 元元素，尽管它<strong>不是 web 标准的一部分</strong>。</p>
+
+<h5 id="toc_14">2）设置 viewport</h5>
+
+<p>一个典型的针对移动端优化的站点包含类似下面的内容：</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1&quot;&gt;</code></pre></div>
+
+<p>viewport 元元素的属性如下表：</p>
+
+<table>
+<thead>
+<tr>
+<th>属性名称</th>
+<th>说明</th>
+<th>可选值</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>width</td>
+<td>设置窗口的宽度</td>
+<td>像素值或device-width（表示100%时屏幕宽度的像素值）</td>
+</tr>
+<tr>
+<td>height</td>
+<td>设置窗口的高度</td>
+<td>一般不指定</td>
+</tr>
+<tr>
+<td>initial-scale</td>
+<td>设置初始时的缩放倍率</td>
+<td></td>
+</tr>
+<tr>
+<td>minimum-scale</td>
+<td>设置允许的最小缩放倍率</td>
+<td></td>
+</tr>
+<tr>
+<td>maximum-scale</td>
+<td>设置允许的最大缩放倍率</td>
+<td></td>
+</tr>
+<tr>
+<td>user-scalable</td>
+<td>是否允许用户手动缩放</td>
+<td>1或yes表示允许；0或no表示不允许</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p>meta 元元素建议设定在 head 元素中的最前面。</p>
+</blockquote>
+
+<h4 id="toc_15">2. 使用相对单位</h4>
+
+<h5 id="toc_16">1）使用相对宽度值</h5>
+
+<p>通过学习 CSS 知道设置宽度可以使用 px 像素值和百分值。使用像素值设置宽度是固定值，不能随着屏幕大小变化而变化。实现响应式页面的宽度只能使用百分值或者auto。</p>
+
+<h6 id="toc_17">如何从固定布局修改为百分比布局</h6>
+
+<p>在《无懈可击的 Web 设计》一书中，提供了一个简易可行的公式：</p>
+
+<div><pre class="line-numbers"><code class="language-none">目标元素宽度 / 上下文元素宽度 = 百分比宽度</code></pre></div>
+
+<p>以下代码是使用像素值设置 HTML 页面元素：</p>
+
+<div><pre class="line-numbers"><code class="language-css">div {
+    width : 500px;
+    height : auto;
+    border : 1px solid black;
+}
+p {
+    width : 480px;
+    padding-left: 10px;
+}</code></pre></div>
+
+<p>将上述像素值修改为百分比：</p>
+
+<div><pre class="line-numbers"><code class="language-css">div {
+    width : 60%;
+    height : auto;
+    border : 1px solid black;
+    }
+p {
+    width : 96%;  /* 480/500=96% */
+    padding-left: 2%; /* 10/500=2% */
+}</code></pre></div>
+
+<h5 id="toc_18">2）用 em 替换 px</h5>
+
+<p>之前使用 em 替代 px 设置字体，主要是为了解决老版本的 IE 浏览器无法缩放以像素值为单位的文字。</p>
+
+<p>目前使用 em 替代 px 设置字体，主要的目的具有以下两个：</p>
+
+<ul>
+<li>实现老版本 IE 浏览器可以缩放文字。</li>
+<li>更好地实现响应式页面，使页面效果更好。</li>
+</ul>
+
+<p>em 的实际大小事相对于上下文的字体大小而言的，例如 1em 表示与上下文字体相同大小。em 单位设置字体同样可以通过以下公式进行计算：</p>
+
+<div><pre class="line-numbers"><code class="language-none">目标元素尺寸 / 上下文元素尺寸 = 百分比尺寸</code></pre></div>
+
+<blockquote>
+<p><strong>值得注意的是：</strong>浏览器显示默认文字大小都是 16 像素。</p>
+</blockquote>
+
+<h4 id="toc_19">3. 流式布局</h4>
+
+<h5 id="toc_20">1）什么是流式布局</h5>
+
+<p>所谓流式布局，就是页面元素的宽度按照屏幕进行适配调整。简单来说，就是 HTML 页面中的元素会根据分辨率的不同而变化大小，但位置并不会有任何变化。</p>
+
+<p>这种布局的主要问题就是，如果屏幕尺度跨度太大，那么在相对其原始设计而言过小或过大的屏幕上不能正常显示。</p>
+
+<p><img src="viewgrid.jpg" alt="流式布局"></p>
+
+<h5 id="toc_21">2）创建流式布局</h5>
+
+<p>流式布局通常被分为 12 列。将 HTML 页面的宽度设置为 100%，这样 HTML 页面会根据浏览器窗口大小的变化而自动伸缩。</p>
+
+<ul>
+<li><p>计算每列所占的百分比：<code>100% / 12 列 = 8.33%</code></p>
+
+<p>根据以上的计算结果，设置 CSS 的 class：</p></li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-css">.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}</code></pre></div>
+
+<ul>
+<li>将所有列设置为浮动（一般为左浮动）</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-css">[class*=&quot;col-&quot;] {
+    float: left;
+}</code></pre></div>
+
+<ul>
+<li><p>将 HTML 页面中所有的元素 box-sizing 设置为 border-box。</p>
+
+<ul>
+<li><p>当 box-sizing 的值为 content-box（默认值），标准盒模型。</p>
+
+<p>尺寸计算公式：<code>width = 内容的宽度，height = 内容的高度。</code></p>
+
+<blockquote>
+<p>宽度和高度都不包含内容的边框（border）和内边距（padding）。</p>
+</blockquote>
+
+<div><pre class="line-numbers"><code class="language-css">div {
+    width : 300px;
+    height : 200px;
+    border : 10px solid black;
+    background : deepskyblue;
+}</code></pre></div></li>
+<li><p>当 box-sizing 的值为 border-box，IE 怪异模式（Quirks mode）使用的 盒模型 。</p>
+
+<p>尺寸计算公式：<code>width = border + padding + 内容的宽度，height = border + padding + 内容的高度。</code></p>
+
+<blockquote>
+<p><strong>注意：</strong>外边距和边框将会包括在盒子中。</p>
+</blockquote>
+
+<div><pre class="line-numbers"><code class="language-css">div {
+    box-sizing: border-box;
+    width : 300px;
+    height : 200px;
+    border : 10px solid black;
+    background : deepskyblue;
+}</code></pre></div></li>
+</ul></li>
+</ul>
+
+<p>根据上述流式布局的内容，实现以下案例：</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;style&gt;
+        * {
+            box-sizing: border-box;
+        }
+
+        [class*=&quot;col-&quot;] {
+            float: left;
+            padding: 15px;
+        }
+
+        .col-1 {
+            width: 8.33%;
+        }
+
+        .col-2 {
+            width: 16.66%;
+        }
+
+        .col-3 {
+            width: 25%;
+        }
+
+        .col-4 {
+            width: 33.33%;
+        }
+
+        .col-5 {
+            width: 41.66%;
+        }
+
+        .col-6 {
+            width: 50%;
+        }
+
+        .col-7 {
+            width: 58.33%;
+        }
+
+        .col-8 {
+            width: 66.66%;
+        }
+
+        .col-9 {
+            width: 75%;
+        }
+
+        .col-10 {
+            width: 83.33%;
+        }
+
+        .col-11 {
+            width: 91.66%;
+        }
+
+        .col-12 {
+            width: 100%;
+        }
+
+        html {
+            font-family: &quot;Lucida Sans&quot;, sans-serif;
+        }
+
+        header {
+            background-color: #9933cc;
+            color: #ffffff;
+            padding: 15px;
+        }
+
+        aside ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        aside li {
+            padding: 8px;
+            margin-bottom: 7px;
+            background-color: #33b5e5;
+            color: #ffffff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        }
+
+        aside li:hover {
+            background-color: #0099cc;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;header&gt;
+    &lt;h1&gt;Chania&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;aside class=&quot;col-3&quot;&gt;
+    &lt;ul&gt;
+        &lt;li&gt;The Flight&lt;/li&gt;
+        &lt;li&gt;The City&lt;/li&gt;
+        &lt;li&gt;The Island&lt;/li&gt;
+        &lt;li&gt;The Food&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/aside&gt;
+
+&lt;article class=&quot;col-9&quot;&gt;
+    &lt;h2&gt;The City&lt;/h2&gt;
+    &lt;p&gt;Chania is the capital of the Chania region on the island of Crete. The city can be divided in two parts, the old
+        town and the modern city.&lt;/p&gt;
+    &lt;p&gt;Resize the browser window to see how the content respond to the resizing.&lt;/p&gt;
+&lt;/article&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+
+<h4 id="toc_22">4. 响应式图片</h4>
+
+<p>实现图片的显示根据浏览器窗口大小的变化而变化，相对比较简单。只需要将图片的 width 设置为 100% 即可。</p>
+
+<div><pre class="line-numbers"><code class="language-css">img {
+    width: 100%;
+    height: auto;
+}</code></pre></div>
+
+<p><strong>但这样设置后，图片的显示可能会比实际大小更大。解决这个问题可以利用 max-width 替代 width 属性即可。</strong></p>
+
+<div><pre class="line-numbers"><code class="language-css">img {
+    max-width: 100%;
+    height: auto;
+}</code></pre></div>
+
+<blockquote>
+<p>这样设置后，图片的显示永远不会比实际大小更大了。</p>
+</blockquote>
+
+<h4 id="toc_23">5. CSS媒体查询</h4>
+
+<p>想要满足更复杂的情况，需要使用 CSS3 中提供的媒体查询进行解决。</p>
+
+<p>媒体查询 包含了一个媒体类型和至少一个使用如宽度、高度和颜色等媒体属性来限制样式表范围的表达式。CSS3加入的媒体查询使得无需修改内容便可以使样式应用于某些特定的设备范围。</p>
+
+<h5 id="toc_24">媒体查询语法</h5>
+
+<p>媒体查询 包含 一个媒体类型、逻辑操作符和一个或多个媒体属性。如果媒体查询中的媒体类型与文档要展示的设备相符则查询结果为真，并且媒体查询中的所有表达式为真。</p>
+
+<p>媒体查询具体的写法有以下两种方式：</p>
+
+<ul>
+<li>link 元素中的 CSS 媒体查询。</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;link rel=&quot;stylesheet&quot; media=&quot;mediatype and|not|only (media feature)&quot; href=&quot;mystylesheet.css&quot;&gt;</code></pre></div>
+
+<blockquote>
+<p>这种方式需要针对不同设备编写不同的 CSS 样式表。</p>
+</blockquote>
+
+<ul>
+<li>样式表中的 CSS 媒体查询。</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-css">@media mediatype and|not|only (media feature) {
+    CSS-Code;
+}</code></pre></div>
+
+<blockquote>
+<p>这种方式只需要编写一个 CSS 样式表，在样式表中根据不同的设备设置不同的样式。（<strong>g更常用</strong>）</p>
+</blockquote>
+
+<h5 id="toc_25">媒体类型</h5>
+
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>all</td>
+<td>用于所有设备</td>
+</tr>
+<tr>
+<td>print</td>
+<td>用于打印机和打印预览</td>
+</tr>
+<tr>
+<td>screen</td>
+<td>用于电脑屏幕，平板电脑，智能手机等</td>
+</tr>
+<tr>
+<td>speech</td>
+<td>用于屏幕阅读器等发声设备</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p>媒体类型更常用的值为 screen。</p>
+</blockquote>
+
+<h5 id="toc_26">逻辑操作符</h5>
+
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>and</td>
+<td>用于把多个 媒体属性 组合起来，合并到同一条媒体查询中。只有当每个属性都为真时，这条查询的结果才为真.</td>
+</tr>
+<tr>
+<td>not</td>
+<td>用于对一条媒体查询的结果进行取反。</td>
+</tr>
+<tr>
+<td>only</td>
+<td>表示仅在媒体查询匹配成功的情况下应用指定样式。可以通过它让选中的样式在老式浏览器中不被应用。</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p>也可以将多个媒体查询以逗号分隔放在一起；只要其中任何一个为真，整个媒体语句就返回真。相当于 or 操作符。</p>
+</blockquote>
+
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>width</td>
+<td>定义输出设备中的页面可见区域宽度</td>
+</tr>
+<tr>
+<td>max-width</td>
+<td>定义输出设备中的页面最大可见区域宽度</td>
+</tr>
+<tr>
+<td>max-device-width</td>
+<td>定义输出设备的屏幕最大可见宽度</td>
+</tr>
+<tr>
+<td>min-width</td>
+<td>定义输出设备中的页面最小可见区域宽度</td>
+</tr>
+<tr>
+<td>min-device-width</td>
+<td>定义输出设备的屏幕最小可见宽度</td>
+</tr>
+</tbody>
+</table>
+
+<h5 id="toc_27">媒体查询示例</h5>
+
+<h6 id="toc_28">link 元素中的 CSS 媒体查询</h6>
+
+<ul>
+<li>HTML 代码</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;LINK元素方式的媒体查询&lt;/title&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/main.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; media=&quot;screen and (min-width:768px)&quot; href=&quot;css/pc.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; media=&quot;screen and (max-width:768px)&quot; href=&quot;css/phone.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;header&gt;
+    &lt;h1&gt;Chania&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;aside class=&quot;col-3&quot;&gt;
+    &lt;ul&gt;
+        &lt;li&gt;The Flight&lt;/li&gt;
+        &lt;li&gt;The City&lt;/li&gt;
+        &lt;li&gt;The Island&lt;/li&gt;
+        &lt;li&gt;The Food&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/aside&gt;
+
+&lt;article class=&quot;col-9&quot;&gt;
+    &lt;h2&gt;The City&lt;/h2&gt;
+    &lt;p&gt;Chania is the capital of the Chania region on the island of Crete. The city can be divided in two parts, the old
+        town and the modern city.&lt;/p&gt;
+    &lt;p&gt;Resize the browser window to see how the content respond to the resizing.&lt;/p&gt;
+&lt;/article&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+
+<ul>
+<li>针对分辨率的宽度在 768px 之上的样式表</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-css">.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+[class*=&quot;col-&quot;] {
+    float: left;
+    padding: 15px;
+}</code></pre></div>
+
+<ul>
+<li>针对分辨率的宽度在 768px 之下的样式表</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-css">[class*=&quot;col-&quot;] {
+    width: 100%;
+    padding: 15px;
+}</code></pre></div>
+
+<h6 id="toc_29">样式表中的 CSS 媒体查询</h6>
+
+<ul>
+<li>HTML 代码</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;CSS样式表中的媒体查询&lt;/title&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/main.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/media.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;header&gt;
+    &lt;h1&gt;Chania&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;aside class=&quot;col-3&quot;&gt;
+    &lt;ul&gt;
+        &lt;li&gt;The Flight&lt;/li&gt;
+        &lt;li&gt;The City&lt;/li&gt;
+        &lt;li&gt;The Island&lt;/li&gt;
+        &lt;li&gt;The Food&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/aside&gt;
+
+&lt;article class=&quot;col-9&quot;&gt;
+    &lt;h2&gt;The City&lt;/h2&gt;
+    &lt;p&gt;Chania is the capital of the Chania region on the island of Crete. The city can be divided in two parts, the old
+        town and the modern city.&lt;/p&gt;
+    &lt;p&gt;Resize the browser window to see how the content respond to the resizing.&lt;/p&gt;
+&lt;/article&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+
+<ul>
+<li>CSS 代码</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-css">/* For desktop: */
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+[class*=&quot;col-&quot;] {
+    float: left;
+    padding: 15px;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*=&quot;col-&quot;] {
+        width: 100%;
+    }
+}</code></pre></div>
+
+<h2 id="toc_30">BOOTSTRAP</h2>
+
+<h3 id="toc_31">起步</h3>
+
+<h4 id="toc_32">1. 什么是BOOTSTRAP</h4>
+
+<h5 id="toc_33">1）BOOTSTRAP概述</h5>
+
+<p>Bootstrap 是 Twitter 公司开发的一个基于 HTML、CSS、JavaScript 的技术框架，符合 HTML、CSS 规范，且代码简介、视觉优美。</p>
+
+<p>Bootstrap 集合 HTML、CSS 和 JavaScript，使用了最新的浏览器技术，为实现快速开发提供了一套前端工具包。使用 Bootstrap 不仅可以构建出非常优雅的 HTML 页面，而且占用资源非常少，使用 gzip 压缩后大小仅用 10KB。并且 Bootstrap 在跨浏览器兼容方面表示也很好。</p>
+
+<h5 id="toc_34">2）选择BOOTSTRAP的理由</h5>
+
+<ul>
+<li>Bootstrap 的 HTML 是基于 HTML5 的最新技术。</li>
+<li>Bootstrap 可以快速实现响应式页面。</li>
+<li>Bootstrap 集成了非常友好的 CSS 样式表，对于非设计人员也可以制作出很漂亮的网页。</li>
+</ul>
+
+<h5 id="toc_35">3）BOOTSTRAP提供的功能</h5>
+
+<p>根据 Bootstrap 官网提供的文档，可以知道 Bootstrap 分为以下几个模块：</p>
+
+<ul>
+<li>全局 CSS 样式：提供了格栅系统、表格、表单、按钮等集成样式。</li>
+<li>组件：提供了下拉菜单、输入框、导航、列表组等组件。</li>
+<li>插件：提供了模态框、滚动监听、警告框、弹出框等插件。</li>
+</ul>
+
+<h5 id="toc_36">4）BOOTSTRAP的版本变化</h5>
+
+<ul>
+<li>2011年8月，Twitter 推出了 Bootstrap 1 版本，该工具由 Twitter 的设计师 Mark Otto 和 Jacob Thornton 合作完成。</li>
+<li>2012年1月，Twitter 推出了 Bootstrap 2 版本。相比 Bootstrap 1 版本，Bootstrap 2 添加了响应式设计、采用 12 栏栅格布局，并且清晰地划分出 CSS 布局、组件和插件等功能。</li>
+<li>2013年8月，Twitter 推出了 Bootstrap 3 版本。在这个版本中，采用移动优先和更好的盒子模型等。并且官方不再支持 IE 7及以下版本的浏览器。</li>
+<li>目前，Bootstrap 4 只是开发者预览版。</li>
+</ul>
+
+<h4 id="toc_37">2. 下载BOOTSTRAP</h4>
+
+<h5 id="toc_38">1）Bootstrap 官网及下载地址</h5>
+
+<ul>
+<li>Bootstrap 官网：<a href="http://getbootstrap.com">http://getbootstrap.com</a></li>
+<li>Bootstrap 下载地址：<a href="http://getbootstrap.com/getting-started/#download">http://getbootstrap.com/getting-started/#download</a></li>
+</ul>
+
+<h5 id="toc_39">2）Bootstrap 使用的两种方式</h5>
+
+<ul>
+<li>将 Bootstrap 提供的压缩包下载，导入到工程目录中使用。</li>
+<li>使用 CDN 加速服务，例如以下内容：</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;!-- 新 Bootstrap 核心 CSS 文件 --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css&quot;&gt;
+
+&lt;!-- 可选的Bootstrap主题文件（一般不用引入） --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap-theme.min.css&quot;&gt;
+
+&lt;!-- jQuery文件。务必在bootstrap.min.js 之前引入 --&gt;
+&lt;script src=&quot;//cdn.bootcss.com/jquery/1.11.3/jquery.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- 最新的 Bootstrap 核心 JavaScript 文件 --&gt;
+&lt;script src=&quot;//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</code></pre></div>
+
+<h5 id="toc_40">3）Bootstrap 目录结构及说明</h5>
+
+<p>下载压缩包之后，将其解压缩到任意目录即可看到以下（压缩版的）目录结构：</p>
+
+<div><pre class="line-numbers"><code class="language-none">bootstrap/
+├── css/        样式库
+│   ├── bootstrap.css               样式文件
+│   ├── bootstrap.css.map
+│   ├── bootstrap.min.css           压缩后的样式文件
+│   ├── bootstrap-theme.css         主题文件
+│   ├── bootstrap-theme.css.map
+│   └── bootstrap-theme.min.css     压缩后的主题文件
+├── js/         核心 js 文件
+│   ├── bootstrap.js                核心 js 文件
+│   └── bootstrap.min.js            压缩后的核心 js 文件
+└── fonts/      字体库
+    ├── glyphicons-halflings-regular.eot
+    ├── glyphicons-halflings-regular.svg
+    ├── glyphicons-halflings-regular.ttf
+    ├── glyphicons-halflings-regular.woff
+    └── glyphicons-halflings-regular.woff2</code></pre></div>
+
+<h4 id="toc_41">3. 对浏览器的支持情况</h4>
+
+<h5 id="toc_42">1）目前支持的浏览器</h5>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Chrome</th>
+<th>Firefox</th>
+<th>Internet Explorer</th>
+<th>Opera</th>
+<th>Safari</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Android</td>
+<td>支持</td>
+<td>支持</td>
+<td>N/A</td>
+<td>不支持</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>IOS</td>
+<td>支持</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>不支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>Mac OS X</td>
+<td>支持</td>
+<td>支持</td>
+<td>N/A</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>Windows</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+<td>不支持</td>
+</tr>
+</tbody>
+</table>
+
+<h5 id="toc_43">2）IE 8及之前版本的兼容</h5>
+
+<ul>
+<li>对 HTML 5 提供的新元素，需要通过 html5shiv.js 库进行兼容。</li>
+<li>对 CSS 3 提供的媒体查询，需要通过 respond.js 库进行支持。</li>
+</ul>
+
+<p>需要在使用 Bootstrap 框架的页面 head 元素中，插入以下内容：</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries --&gt;
+&lt;!-- WARNING: Respond.js doesn&#39;t work if you view the page via file:// --&gt;
+&lt;!--[if lt IE 9]&gt;
+    &lt;script src=&quot;//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;//cdn.bootcss.com/respond.js/1.4.2/respond.min.js&quot;&gt;&lt;/script&gt;
+&lt;![endif]--&gt;</code></pre></div>
+
+<h5 id="toc_44">3）IE 兼容模式</h5>
+
+<p>Bootstrap 不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下，建议将此 <code>&lt;meta&gt;</code> 元素加入到页面中：</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</code></pre></div>
+
+<h5 id="toc_45">4）国产浏览器高速模式</h5>
+
+<p>国内浏览器厂商一般都支持兼容模式（即 IE 内核）和高速模式（即 webkit 内核），不幸的是，所有国产浏览器都是默认使用兼容模式，这就造成由于低版本 IE （IE8 及以下）内核让基于 Bootstrap 构建的网站展现效果很糟糕的情况。</p>
+
+<p>将下面的 <code>&lt;meta&gt;</code> 元素加入到页面中，可以让部分国产浏览器默认采用高速模式渲染页面：</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;meta name=&quot;renderer&quot; content=&quot;webkit&quot;&gt;</code></pre></div>
+
+<h4 id="toc_46">4. box-sizing</h4>
+
+<p>Bootstrap 默认使用的盒子模型是 border-box，可能会和一些第三方组件冲突。</p>
+
+<p>为了避免 Bootstrap 设置的全局盒模型所带来的影响，可以重置单个页面元素或覆盖整个区域的盒模型。</p>
+
+<ul>
+<li>覆盖单个页面元素</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-css">/* 通过 CSS 代码覆盖单个页面元素的盒模型 */
+.element {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+}</code></pre></div>
+
+<ul>
+<li>重置整个区域</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-css">/* 通过 CSS 代码重置整个区域 */
+.reset-box-sizing,
+.reset-box-sizing *,
+.reset-box-sizing *:before,
+.reset-box-sizing *:after {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+}</code></pre></div>
+
+<h4 id="toc_47">5. 基本模板</h4>
+
+<p>Bootstrap 提供了一个最基本的 HTML 模板，基于这个模板开始实现 Bootstrap 响应式页面。</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;zh-CN&quot;&gt;
+&lt;head&gt;
+    &lt;!-- 设置当前 HTML 页面的编码格式为 UTF-8 --&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;!-- 设置 IE 的兼容模式 --&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;!-- 设置移动优先 --&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;!-- 上述3个meta标签必须放在最前面，任何其他内容都必须跟随其后！ --&gt;
+    &lt;title&gt;Bootstrap最基本的HTML模板&lt;/title&gt;
+
+    &lt;!-- 导入 Bootstrap 框架的 CSS 文件 --&gt;
+    &lt;link href=&quot;bootstrap/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+
+    &lt;!--
+        html5shiv.js 文件解决 IE8及之前版本的浏览器支持 HTML 5 元素的问题。
+        respond.js 文件解决 IE8及之前版本的浏览器支持 CSS 3 的媒体查询问题。
+    --&gt;
+    &lt;!--[if lt IE 9]&gt;
+    &lt;script src=&quot;bootstrap/js/html5shiv.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;bootstrap/js/respond.min.js&quot;&gt;&lt;/script&gt;
+    &lt;![endif]--&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;你好，世界！&lt;/h1&gt;
+
+&lt;!--
+    由于 Bootstrap 是基于 jQuery 实现的核心 js 功能,
+    所以想要使用 Bootstrap 提供的插件功能,需要先导入 jQuery 文件。
+--&gt;
+&lt;script src=&quot;bootstrap/js/jquery-1.11.3.js&quot;&gt;&lt;/script&gt;
+&lt;!-- 导入 Bootstrap 框架的 js 文件 --&gt;
+&lt;script src=&quot;bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+
+<h3 id="toc_48">全局CSS样式</h3>
+
+<h4 id="toc_49">1. 概述</h4>
+
+<h5 id="toc_50">1）HTML 5 文档类型</h5>
+
+<p>Bootstrap 使用到的某些 HTML 元素和 CSS 属性需要将页面设置为 HTML5 文档类型。</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;zh-CN&quot;&gt;
+  ...
+&lt;/html&gt;</code></pre></div>
+
+<h5 id="toc_51">2）移动设备优先</h5>
+
+<p>Bootstrap 是移动设备优先的。为了确保适当的绘制和触屏缩放，需要在 <code>&lt;head&gt;</code> 之中添加 viewport 元元素。</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</code></pre></div>
+
+<p>在移动设备浏览器上，通过为 viewport设置 meta 属性为 user-scalable=no 可以禁用其缩放功能。这样禁用缩放功能后，用户只能滚动屏幕，就能让你的网站看上去更像原生应用的感觉。</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no&quot;&gt;</code></pre></div>
+
+<h5 id="toc_52">3）排版与链接</h5>
+
+<p>Bootstrap 排版、链接样式设置了基本的全局样式。</p>
+
+<ul>
+<li>为 body 元素设置 background-color: #fff;</li>
+<li>使用 @font-family-base、@font-size-base 和 @line-height-base 变量作为排版的基本参数</li>
+<li>为所有链接设置了基本颜色 @link-color ，并且当链接处于 :hover 状态时才添加下划线</li>
+</ul>
+
+<h4 id="toc_53">2. Normalize.css</h4>
+
+<h5 id="toc_54">1）CSS 重置样式库</h5>
+
+<p>为了增强跨浏览器表现的一致性，Bootstrap 使用 Normalize.css（CSS 重置样式库）。</p>
+
+<h5 id="toc_55">2）什么是 Normalize.css</h5>
+
+<p>Normalize.css 只是一个很小的 CSS 文件，但它在默认的 HTML 元素样式上提供了跨浏览器的高度一致性。相比于传统的 CSS reset，Normalize.css 是一种现代的、为 HTML5 准备的优质替代方案。</p>
+
+<p>Normalize.css 的主要特点如下：</p>
+
+<ul>
+<li>保护有用的浏览器默认样式而不是完全去掉它</li>
+<li>一般化的样式：为大部分HTML元素提供</li>
+<li>修复浏览器自身的bug并保证各浏览器的一致性</li>
+<li>优化CSS可用性：用一些小技巧</li>
+<li>解释代码：用注释和详细的文档来</li>
+</ul>
+
+<h5 id="toc_56">3）Normalize.css 与传统 Reset 的区别</h5>
+
+<ul>
+<li>Normalize.css 保护了有价值的默认值</li>
+<li>Normalize.css 修复了浏览器的bug</li>
+<li>Normalize.css 不会让你的调试工具变的杂乱</li>
+<li>Normalize.css 是模块化的</li>
+<li>Normalize.css 拥有详细的文档</li>
+</ul>
+
+<h4 id="toc_57">3. 布局容器</h4>
+
+<p>Bootstrap 提供了以下两种布局容器：</p>
+
+<ul>
+<li><p>.container 类用于固定宽度并支持响应式布局的容器。</p>
+
+<table>
+<thead>
+<tr>
+<th>媒体查询</th>
+<th>宽度值</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>&gt;1200px</td>
+<td>1170px</td>
+</tr>
+<tr>
+<td>&gt;992px</td>
+<td>970px</td>
+</tr>
+<tr>
+<td>&gt;768px</td>
+<td>750px</td>
+</tr>
+<tr>
+<td>小分辨率</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>.container-fluid 类用于 100% 宽度，占据 viewport 的容器。</p></li>
+</ul>
+
+<blockquote>
+<p><strong>值得注意的是：</strong>这两种 容器类不能互相嵌套。</p>
+</blockquote>
+
+<h4 id="toc_58">4. 按钮</h4>
+
+<h5 id="toc_59">1）作为按钮的元素</h5>
+
+<p>Bootstrap 利用 <code>&lt;a&gt;</code>、<code>&lt;button&gt;</code>和<code>&lt;input&gt;</code>元素作为按钮样式。</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;a class=&quot;btn btn-default&quot; href=&quot;#&quot; role=&quot;button&quot;&gt;Link&lt;/a&gt;
+        &lt;button class=&quot;btn btn-default&quot; type=&quot;submit&quot;&gt;Button&lt;/button&gt;
+        &lt;input class=&quot;btn btn-default&quot; type=&quot;button&quot; value=&quot;Input&quot;&gt;
+        &lt;input class=&quot;btn btn-default&quot; type=&quot;submit&quot; value=&quot;Submit&quot;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<blockquote>
+<p><strong>值得注意的是：</strong></p>
+
+<ol>
+<li>导航和导航条组件只支持 <code>&lt;button&gt;</code> 元素。</li>
+<li>如果 <code>&lt;a&gt;</code> 元素被作为按钮使用，务必为其设置 role=&quot;button&quot; 属性。</li>
+<li>建议尽可能使用 <code>&lt;button&gt;</code> 元素。</li>
+</ol>
+</blockquote>
+
+<h5 id="toc_60">2）预定义样式</h5>
+
+<p>Bootstrap 为按钮预定义了很多样式，具体样式说明如下：</p>
+
+<table>
+<thead>
+<tr>
+<th>样式名称</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>btn-default</td>
+<td>默认样式</td>
+</tr>
+<tr>
+<td>btn-primary</td>
+<td>首选项</td>
+</tr>
+<tr>
+<td>btn-success</td>
+<td>成功样式</td>
+</tr>
+<tr>
+<td>btn-info</td>
+<td>一般信息</td>
+</tr>
+<tr>
+<td>btn-warning</td>
+<td>警告样式</td>
+</tr>
+<tr>
+<td>btn-danger</td>
+<td>危险样式</td>
+</tr>
+<tr>
+<td>btn-link</td>
+<td>链接样式</td>
+</tr>
+</tbody>
+</table>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot;&gt;（默认样式）Default&lt;/button&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;（首选项）Primary&lt;/button&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-success&quot;&gt;（成功）Success&lt;/button&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-info&quot;&gt;（一般信息）Info&lt;/button&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-warning&quot;&gt;（警告）Warning&lt;/button&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-danger&quot;&gt;（危险）Danger&lt;/button&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-link&quot;&gt;（链接）Link&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h5 id="toc_61">3）不同尺寸的按钮</h5>
+
+<ul>
+<li>Bootstrap 为按钮提供了大、默认、小和很小几个尺寸。</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+   &lt;div class=&quot;row&quot;&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-lg&quot;&gt;（大按钮）Large button&lt;/button&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot;&gt;（默认尺寸）Default button&lt;/button&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot;&gt;（默认尺寸）Default button&lt;/button&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-xs&quot;&gt;（超小尺寸）Extra small button&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<ul>
+<li>通过给按钮添加 .btn-block 类可以将其拉伸至父元素100%的宽度，而且按钮也变为了块级（block）元素。</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-lg btn-block&quot;&gt;（块级元素）Block level button&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h5 id="toc_62">4）按钮激活状态</h5>
+
+<p>为按钮元素添加 .active 类，设置其为激活状态。当按钮处于激活状态时，其表现为被按压下去（底色更深、边框夜色更深、向内投射阴影）。</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-lg active&quot;&gt;Button&lt;/button&gt;
+        &lt;a href=&quot;#&quot; class=&quot;btn btn-default btn-lg active&quot; role=&quot;button&quot;&gt;Link&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h5 id="toc_63">5）按钮禁用状态</h5>
+
+<p>通过为按钮的背景设置 opacity 属性就可以呈现出无法点击的效果。</p>
+
+<ul>
+<li>为 <code>&lt;button&gt;</code> 元素添加 disabled 属性，使其表现出禁用状态。</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-lg&quot; disabled=&quot;disabled&quot;&gt;Button&lt;/button&gt;</code></pre></div>
+
+<blockquote>
+<p><strong>跨浏览器兼容性</strong></p>
+
+<p>Internet Explorer 9 及更低版本的浏览器将会把按钮中的文本绘制为灰色，并带有恶心的阴影，目前还没有解决办法。</p>
+</blockquote>
+
+<ul>
+<li>为基于 <code>&lt;a&gt;</code> 元素创建的按钮添加 .disabled 类。</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;a href=&quot;#&quot; class=&quot;btn btn-default btn-lg disabled&quot; role=&quot;button&quot;&gt;Link&lt;/a&gt;</code></pre></div>
+
+<h4 id="toc_64">5. 图片</h4>
+
+<h5 id="toc_65">1）响应式图片</h5>
+
+<p>通过为图片添加 .img-responsive 类可以让图片支持响应式布局。</p>
+
+<blockquote>
+<p>如果需要让使用了 .img-responsive 类的图片水平居中，请使用 .center-block 类，不要用 .text-center。</p>
+</blockquote>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;img src=&quot;imgs/1.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;Responsive image&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;img src=&quot;imgs/1.jpg&quot; class=&quot;img-responsive center-block&quot; alt=&quot;Responsive image&quot;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h5 id="toc_66">2）图片形状</h5>
+
+<p>通过为 <img> 元素添加以下相应的类，可以让图片呈现不同的形状。</p>
+
+<table>
+<thead>
+<tr>
+<th>类名</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>img-rounded</td>
+<td>圆角矩形</td>
+</tr>
+<tr>
+<td>img-circle</td>
+<td>圆形</td>
+</tr>
+<tr>
+<td>img-thumbnail</td>
+<td>矩形</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p>IE 8 不支持 CSS3 中的圆角属性。</p>
+</blockquote>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;img src=&quot;imgs/1.jpg&quot; alt=&quot;...&quot; class=&quot;img-rounded&quot;&gt;
+        &lt;img src=&quot;imgs/1.jpg&quot; alt=&quot;...&quot; class=&quot;img-circle&quot;&gt;
+        &lt;img src=&quot;imgs/1.jpg&quot; alt=&quot;...&quot; class=&quot;img-thumbnail&quot;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h4 id="toc_67">6. 文本</h4>
+
+<h5 id="toc_68">1）文本对齐</h5>
+
+<p>通过以下文本对齐类，可以简单方便的将文字重新对齐。</p>
+
+<table>
+<thead>
+<tr>
+<th>类名</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>text-left</td>
+<td>左对齐</td>
+</tr>
+<tr>
+<td>text-center</td>
+<td>居中对齐</td>
+</tr>
+<tr>
+<td>text-right</td>
+<td>右对齐</td>
+</tr>
+<tr>
+<td>text-justify</td>
+<td>两端对齐，段落中超出屏幕部分文字自动换行</td>
+</tr>
+<tr>
+<td>text-nowrap</td>
+<td>段落中超出屏幕部分不换行</td>
+</tr>
+</tbody>
+</table>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;p class=&quot;text-left&quot;&gt;Left aligned text.&lt;/p&gt;
+        &lt;p class=&quot;text-center&quot;&gt;Center aligned text.&lt;/p&gt;
+        &lt;p class=&quot;text-right&quot;&gt;Right aligned text.&lt;/p&gt;
+        &lt;p class=&quot;text-justify&quot;&gt;Justified text.&lt;/p&gt;
+        &lt;p class=&quot;text-nowrap&quot;&gt;No wrap text.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h5 id="toc_69">2）改变大小写</h5>
+
+<p>通过以下这几个类可以改变文本的大小写。</p>
+
+<table>
+<thead>
+<tr>
+<th>类名</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>text-lowercase</td>
+<td>小写</td>
+</tr>
+<tr>
+<td>text-uppercase</td>
+<td>大写</td>
+</tr>
+<tr>
+<td>text-capitalize</td>
+<td>首字母大写</td>
+</tr>
+</tbody>
+</table>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;p class=&quot;text-lowercase&quot;&gt;Lowercased text.&lt;/p&gt;
+        &lt;p class=&quot;text-uppercase&quot;&gt;Uppercased text.&lt;/p&gt;
+        &lt;p class=&quot;text-capitalize&quot;&gt;Capitalized text.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h5 id="toc_70">3）文本颜色</h5>
+
+<p>Bootstrap 允许为文本设置不同颜色表示不同含义，具体如下：</p>
+
+<table>
+<thead>
+<tr>
+<th>类名</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>text-muted</td>
+<td>提示，使用浅灰色</td>
+</tr>
+<tr>
+<td>text-primary</td>
+<td>首选项，使用蓝色</td>
+</tr>
+<tr>
+<td>text-success</td>
+<td>成功，使用浅绿色</td>
+</tr>
+<tr>
+<td>text-info</td>
+<td>信息，使用浅蓝色</td>
+</tr>
+<tr>
+<td>text-warning</td>
+<td>警告，使用黄色</td>
+</tr>
+<tr>
+<td>text-danger</td>
+<td>危险，使用褐色</td>
+</tr>
+</tbody>
+</table>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;p class=&quot;text-muted&quot;&gt;提示信息&lt;/p&gt;
+        &lt;p class=&quot;text-primary&quot;&gt;首选项&lt;/p&gt;
+        &lt;p class=&quot;text-success&quot;&gt;成功&lt;/p&gt;
+        &lt;p class=&quot;text-info&quot;&gt;信息&lt;/p&gt;
+        &lt;p class=&quot;text-warning&quot;&gt;警告&lt;/p&gt;
+        &lt;p class=&quot;text-danger&quot;&gt;危险&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<blockquote>
+<p><strong>本笔记由 <em>金云龙</em> 编写</strong></p>
+
+<p>作者博客地址：<a href="http://www.longestory.com">龙哥有话说</a></p>
+
+<p>如转载或发布，请注明作者名称</p>
+</blockquote>
+
+
+
+<script type="text/javascript">
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+<script type="text/javascript">
+Prism.languages.markup={comment:/<!--[\w\W]*?-->/,prolog:/<\?[\w\W]+?\?>/,doctype:/<!DOCTYPE[\w\W]+?>/,cdata:/<!\[CDATA\[[\w\W]*?]]>/i,tag:{pattern:/<\/?(?!\d)[^\s>\/=.$<]+(?:\s+[^\s>\/=]+(?:=(?:("|')(?:\\\1|\\?(?!\1)[\w\W])*\1|[^\s'">=]+))?)*\s*\/?>/i,inside:{tag:{pattern:/^<\/?[^\s>\/]+/i,inside:{punctuation:/^<\/?/,namespace:/^[^\s>\/:]+:/}},"attr-value":{pattern:/=(?:('|")[\w\W]*?(\1)|[^\s>]+)/i,inside:{punctuation:/[=>"']/}},punctuation:/\/?>/,"attr-name":{pattern:/[^\s>\/]+/,inside:{namespace:/^[^\s>\/:]+:/}}}},entity:/&#?[\da-z]{1,8};/i},Prism.hooks.add("wrap",function(a){"entity"===a.type&&(a.attributes.title=a.content.replace(/&amp;/,"&"))}),Prism.languages.xml=Prism.languages.markup,Prism.languages.html=Prism.languages.markup,Prism.languages.mathml=Prism.languages.markup,Prism.languages.svg=Prism.languages.markup;
+</script>
+
+<script type="text/javascript">
+Prism.languages.css={comment:/\/\*[\w\W]*?\*\//,atrule:{pattern:/@[\w-]+?.*?(;|(?=\s*\{))/i,inside:{rule:/@[\w-]+/}},url:/url\((?:(["'])(\\(?:\r\n|[\w\W])|(?!\1)[^\\\r\n])*\1|.*?)\)/i,selector:/[^\{\}\s][^\{\};]*?(?=\s*\{)/,string:/("|')(\\(?:\r\n|[\w\W])|(?!\1)[^\\\r\n])*\1/,property:/(\b|\B)[\w-]+(?=\s*:)/i,important:/\B!important\b/i,"function":/[-a-z0-9]+(?=\()/i,punctuation:/[(){};:]/},Prism.languages.css.atrule.inside.rest=Prism.util.clone(Prism.languages.css),Prism.languages.markup&&(Prism.languages.insertBefore("markup","tag",{style:{pattern:/(<style[\w\W]*?>)[\w\W]*?(?=<\/style>)/i,lookbehind:!0,inside:Prism.languages.css,alias:"language-css"}}),Prism.languages.insertBefore("inside","attr-value",{"style-attr":{pattern:/\s*style=("|').*?\1/i,inside:{"attr-name":{pattern:/^\s*style/i,inside:Prism.languages.markup.tag.inside},punctuation:/^\s*=\s*['"]|['"]\s*$/,"attr-value":{pattern:/.+/i,inside:Prism.languages.css}},alias:"language-css"}},Prism.languages.markup.tag));
+</script>
+
+<script type="text/javascript">
+Prism.languages.css.selector={pattern:/[^\{\}\s][^\{\}]*(?=\s*\{)/,inside:{"pseudo-element":/:(?:after|before|first-letter|first-line|selection)|::[-\w]+/,"pseudo-class":/:[-\w]+(?:\(.*\))?/,"class":/\.[-:\.\w]+/,id:/#[-:\.\w]+/}},Prism.languages.insertBefore("css","function",{hexcode:/#[\da-f]{3,6}/i,entity:/\\[\da-f]{1,8}/i,number:/[\d%\.]+/});
+</script>
+
+<script type="text/javascript">
+!function(){"undefined"!=typeof self&&self.Prism&&self.document&&Prism.hooks.add("complete",function(e){if(e.code){var t=e.element.parentNode,s=/\s*\bline-numbers\b\s*/;if(t&&/pre/i.test(t.nodeName)&&(s.test(t.className)||s.test(e.element.className))&&!e.element.querySelector(".line-numbers-rows")){s.test(e.element.className)&&(e.element.className=e.element.className.replace(s,"")),s.test(t.className)||(t.className+=" line-numbers");var n,a=e.code.match(/\n(?!$)/g),l=a?a.length+1:1,m=new Array(l+1);m=m.join("<span></span>"),n=document.createElement("span"),n.className="line-numbers-rows",n.innerHTML=m,t.hasAttribute("data-start")&&(t.style.counterReset="linenumber "+(parseInt(t.getAttribute("data-start"),10)-1)),e.element.appendChild(n)}}})}();
+</script>
+
+
+</body>
+
+</html>

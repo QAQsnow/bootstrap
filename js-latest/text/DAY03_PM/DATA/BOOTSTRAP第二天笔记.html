@@ -1,0 +1,1989 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<title>BOOTSTRAP第二天笔记</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+<style type="text/css">
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+</style>
+
+<style type="text/css">
+pre.line-numbers {
+	position: relative;
+	padding-left: 3.8em;
+	counter-reset: linenumber;
+}
+
+pre.line-numbers > code {
+	position: relative;
+}
+
+.line-numbers .line-numbers-rows {
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	font-size: 100%;
+	left: -3.8em;
+	width: 3em; /* works for line-numbers below 1000 lines */
+	letter-spacing: -1px;
+	border-right: 1px solid #999;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+}
+
+	.line-numbers-rows > span {
+		pointer-events: none;
+		display: block;
+		counter-increment: linenumber;
+	}
+
+		.line-numbers-rows > span:before {
+			content: counter(linenumber);
+			color: #999;
+			display: block;
+			padding-right: 0.8em;
+			text-align: right;
+		}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">BOOTSTRAP第二天笔记</h1>
+
+<h2 id="toc_1">全局 CSS 样式</h2>
+
+<h3 id="toc_2">1. 列表</h3>
+
+<h4 id="toc_3">1）无序列表</h4>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;ul&gt;
+            &lt;li&gt;苹果&lt;/li&gt;
+            &lt;li&gt;香蕉&lt;/li&gt;
+            &lt;li&gt;西瓜
+                &lt;ul&gt;
+                    &lt;li&gt;大兴西瓜&lt;/li&gt;
+                    &lt;li&gt;东北西瓜&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li&gt;芒果&lt;/li&gt;
+            &lt;li&gt;樱桃&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h4 id="toc_4">2）有序列表</h4>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;ol&gt;
+            &lt;li&gt;苹果&lt;/li&gt;
+            &lt;li&gt;香蕉&lt;/li&gt;
+            &lt;li&gt;西瓜
+                &lt;ol&gt;
+                    &lt;li&gt;大兴西瓜&lt;/li&gt;
+                    &lt;li&gt;东北西瓜&lt;/li&gt;
+                &lt;/ol&gt;
+            &lt;/li&gt;
+            &lt;li&gt;芒果&lt;/li&gt;
+            &lt;li&gt;樱桃&lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h4 id="toc_5">3）无样式列表</h4>
+
+<p>移除了默认的 list-style 样式和左侧外边距的一组元素（只针对直接子元素）。</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;ul class=&quot;list-unstyled&quot;&gt;
+            &lt;li&gt;苹果&lt;/li&gt;
+            &lt;li&gt;香蕉&lt;/li&gt;
+            &lt;li&gt;西瓜
+                &lt;ul&gt;
+                    &lt;li&gt;大兴西瓜&lt;/li&gt;
+                    &lt;li&gt;东北西瓜&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li&gt;芒果&lt;/li&gt;
+            &lt;li&gt;樱桃&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h4 id="toc_6">4）内联列表</h4>
+
+<p>通过设置 display: inline-block; 并添加少量的内补（padding），将所有元素放置于同一行。</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;ul class=&quot;list-inline&quot;&gt;
+            &lt;li&gt;苹果&lt;/li&gt;
+            &lt;li&gt;香蕉&lt;/li&gt;
+            &lt;li&gt;西瓜
+                &lt;ul&gt;
+                    &lt;li&gt;大兴西瓜&lt;/li&gt;
+                    &lt;li&gt;东北西瓜&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li&gt;芒果&lt;/li&gt;
+            &lt;li&gt;樱桃&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h4 id="toc_7">5）描述</h4>
+
+<h5 id="toc_8">a. 垂直排列的描述</h5>
+
+<p>带有描述的短语列表。</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;dl&gt;
+            &lt;dt&gt;Description lists&lt;/dt&gt;
+            &lt;dd&gt;A description list is perfect for defining terms.&lt;/dd&gt;
+            &lt;dt&gt;Euismod&lt;/dt&gt;
+            &lt;dd&gt;Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.&lt;br&gt;
+                Donec id elit non mi porta gravida at eget metus.&lt;/dd&gt;
+            &lt;dt&gt;Malesuada porta&lt;/dt&gt;
+            &lt;dd&gt;Etiam porta sem malesuada magna mollis euismod.&lt;/dd&gt;
+        &lt;/dl&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h5 id="toc_9">b. 水平排列的描述</h5>
+
+<p>.dl-horizontal 可以让 <dl> 内的短语及其描述排在一行。</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;dl class=&quot;dl-horizontal&quot;&gt;
+            &lt;dt&gt;Description lists&lt;/dt&gt;
+            &lt;dd&gt;A description list is perfect for defining terms.&lt;/dd&gt;
+            &lt;dt&gt;Euismod&lt;/dt&gt;
+            &lt;dd&gt;Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.&lt;br&gt;
+                Donec id elit non mi porta gravida at eget metus.&lt;/dd&gt;
+            &lt;dt&gt;Malesuada porta&lt;/dt&gt;
+            &lt;dd&gt;Etiam porta sem malesuada magna mollis euismod.&lt;/dd&gt;
+        &lt;/dl&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h3 id="toc_10">2. 表格</h3>
+
+<h4 id="toc_11">1）基本表格</h4>
+
+<p>为任意 <code>&lt;table&gt;</code> 标签添加 .table 类可以为其赋予基本的样式。</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;table class=&quot;table&quot;&gt;
+            &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;ID&lt;/th&gt;
+                &lt;th&gt;名称&lt;/th&gt;
+                &lt;th&gt;价格&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;1&lt;/td&gt;
+                &lt;td&gt;书籍&lt;/td&gt;
+                &lt;td&gt;12.50&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;2&lt;/td&gt;
+                &lt;td&gt;电视&lt;/td&gt;
+                &lt;td&gt;1000&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;3&lt;/td&gt;
+                &lt;td&gt;笔记本&lt;/td&gt;
+                &lt;td&gt;2000&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;3&lt;/td&gt;
+                &lt;td&gt;笔记本&lt;/td&gt;
+                &lt;td&gt;2000&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h4 id="toc_12">2）条纹状表格</h4>
+
+<p>通过 .table-striped 类可以给 <code>&lt;tbody&gt;</code> 之内的每一行增加斑马条纹样式。</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;table class=&quot;table table-striped&quot;&gt;
+            &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;ID&lt;/th&gt;
+                &lt;th&gt;名称&lt;/th&gt;
+                &lt;th&gt;价格&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;1&lt;/td&gt;
+                &lt;td&gt;书籍&lt;/td&gt;
+                &lt;td&gt;12.50&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;2&lt;/td&gt;
+                &lt;td&gt;电视&lt;/td&gt;
+                &lt;td&gt;1000&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;3&lt;/td&gt;
+                &lt;td&gt;笔记本&lt;/td&gt;
+                &lt;td&gt;2000&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;3&lt;/td&gt;
+                &lt;td&gt;笔记本&lt;/td&gt;
+                &lt;td&gt;2000&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<blockquote>
+<p>条纹状表格是依赖 :nth-child CSS 选择器实现的，而这一功能不被 IE 8 支持。</p>
+</blockquote>
+
+<h4 id="toc_13">3）带边框表格</h4>
+
+<p>添加 .table-bordered 类为表格和其中的每个单元格增加边框。</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;table class=&quot;table table-bordered&quot;&gt;
+            &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;ID&lt;/th&gt;
+                &lt;th&gt;名称&lt;/th&gt;
+                &lt;th&gt;价格&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;1&lt;/td&gt;
+                &lt;td&gt;书籍&lt;/td&gt;
+                &lt;td&gt;12.50&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;2&lt;/td&gt;
+                &lt;td&gt;电视&lt;/td&gt;
+                &lt;td&gt;1000&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;3&lt;/td&gt;
+                &lt;td&gt;笔记本&lt;/td&gt;
+                &lt;td&gt;2000&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;3&lt;/td&gt;
+                &lt;td&gt;笔记本&lt;/td&gt;
+                &lt;td&gt;2000&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h4 id="toc_14">4）鼠标悬停</h4>
+
+<p>通过添加 .table-hover 类可以让 <code>&lt;tbody&gt;</code> 中的每一行对鼠标悬停状态作出响应。</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;table class=&quot;table table-hover&quot;&gt;
+            &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;ID&lt;/th&gt;
+                &lt;th&gt;名称&lt;/th&gt;
+                &lt;th&gt;价格&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;1&lt;/td&gt;
+                &lt;td&gt;书籍&lt;/td&gt;
+                &lt;td&gt;12.50&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;2&lt;/td&gt;
+                &lt;td&gt;电视&lt;/td&gt;
+                &lt;td&gt;1000&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;3&lt;/td&gt;
+                &lt;td&gt;笔记本&lt;/td&gt;
+                &lt;td&gt;2000&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;3&lt;/td&gt;
+                &lt;td&gt;笔记本&lt;/td&gt;
+                &lt;td&gt;2000&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h4 id="toc_15">5）紧缩表格</h4>
+
+<p>通过添加 .table-condensed 类可以让表格更加紧凑，单元格中的 padding 均会减半。</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;table class=&quot;table table-condensed&quot;&gt;
+            &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;ID&lt;/th&gt;
+                &lt;th&gt;名称&lt;/th&gt;
+                &lt;th&gt;价格&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;1&lt;/td&gt;
+                &lt;td&gt;书籍&lt;/td&gt;
+                &lt;td&gt;12.50&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;2&lt;/td&gt;
+                &lt;td&gt;电视&lt;/td&gt;
+                &lt;td&gt;1000&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;3&lt;/td&gt;
+                &lt;td&gt;笔记本&lt;/td&gt;
+                &lt;td&gt;2000&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;3&lt;/td&gt;
+                &lt;td&gt;笔记本&lt;/td&gt;
+                &lt;td&gt;2000&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h4 id="toc_16">6）状态类</h4>
+
+<p>通过这些状态类可以为行或单元格设置颜色。</p>
+
+<p>| 类名 | 描述 |
+| active | 鼠标悬停在行或单元格上时所设置的颜色 |
+| success | 标识成功或积极的动作 |
+| info | 标识普通的提示信息或动作 |
+| warning | 标识警告或需要用户注意 |
+| danger | 标识危险或潜在的带来负面影响的动作 | </p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;table class=&quot;table&quot;&gt;
+            &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;ID&lt;/th&gt;
+                &lt;th&gt;名称&lt;/th&gt;
+                &lt;th&gt;价格&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+            &lt;tr class=&quot;active&quot;&gt;
+                &lt;td&gt;1&lt;/td&gt;
+                &lt;td&gt;书籍&lt;/td&gt;
+                &lt;td&gt;12.50&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr class=&quot;success&quot;&gt;
+                &lt;td&gt;2&lt;/td&gt;
+                &lt;td&gt;电视&lt;/td&gt;
+                &lt;td&gt;1000&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td class=&quot;info&quot;&gt;3&lt;/td&gt;
+                &lt;td&gt;笔记本&lt;/td&gt;
+                &lt;td class=&quot;warning&quot;&gt;2000&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;3&lt;/td&gt;
+                &lt;td class=&quot;danger&quot;&gt;笔记本&lt;/td&gt;
+                &lt;td&gt;2000&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<blockquote>
+<p><strong>值得注意的是：</strong></p>
+
+<p>这些状态类不仅可以作用于<code>&lt;tr&gt;</code>元素，还可以作用于<code>&lt;td&gt;</code>元素。</p>
+</blockquote>
+
+<h4 id="toc_17">7）响应式表格</h4>
+
+<p>将任何 .table 元素包裹在 .table-responsive 元素内，即可创建响应式表格。其会在小屏幕设备上（小于768px）水平滚动。当屏幕大于 768px 宽度时，水平滚动条消失。</p>
+
+<h3 id="toc_18">3. 辅助样式</h3>
+
+<h4 id="toc_19">1）背景颜色</h4>
+
+<p>和文本颜色一样，Bootstrap 允许添加不同的背景颜色表示不同含义，具体如下：</p>
+
+<table>
+<thead>
+<tr>
+<th>类名</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>bg-primary</td>
+<td>首选项，使用蓝色</td>
+</tr>
+<tr>
+<td>bg-success</td>
+<td>成功，使用浅绿色</td>
+</tr>
+<tr>
+<td>bg-info</td>
+<td>信息，使用浅蓝色</td>
+</tr>
+<tr>
+<td>bg-warning</td>
+<td>警告，使用黄色</td>
+</tr>
+<tr>
+<td>bg-danger</td>
+<td>危险，使用褐色</td>
+</tr>
+</tbody>
+</table>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;p class=&quot;bg-muted&quot;&gt;提示信息&lt;/p&gt;
+        &lt;p class=&quot;bg-primary&quot;&gt;首选项&lt;/p&gt;
+        &lt;p class=&quot;bg-success&quot;&gt;成功&lt;/p&gt;
+        &lt;p class=&quot;bg-info&quot;&gt;信息&lt;/p&gt;
+        &lt;p class=&quot;bg-warning&quot;&gt;警告&lt;/p&gt;
+        &lt;p class=&quot;bg-danger&quot;&gt;危险&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h4 id="toc_20">2）浮动</h4>
+
+<h5 id="toc_21">a. 浮动</h5>
+
+<p>通过添加 .pull-left 或 .pull-right 类，可以将任意元素向左或向右浮动。</p>
+
+<ul>
+<li>CSS 代码</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-css">.block1 {
+    width : 300px;
+    height : 200px;
+    border : 1px solid black;
+    background : dodgerblue;
+}
+.block2 {
+    width : 500px;
+    height : 300px;
+    border : 1px solid black;
+    background : yellowgreen;
+}</code></pre></div>
+
+<ul>
+<li>HTML 代码</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div&gt;
+        &lt;div class=&quot;block1 pull-left&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;block1 pull-right&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;block2&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h5 id="toc_22">b. 清除浮动</h5>
+
+<p>通过为父元素添加 .clearfix 类可以很容易地清除浮动。</p>
+
+<ul>
+<li>CSS 代码</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-css">.block1 {
+    width : 300px;
+    height : 200px;
+    border : 1px solid black;
+    background : dodgerblue;
+}
+.block2 {
+    width : 500px;
+    height : 300px;
+    border : 1px solid black;
+    background : yellowgreen;
+}</code></pre></div>
+
+<ul>
+<li>HTML 代码</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;clearfix&quot;&gt;
+        &lt;div class=&quot;block1 pull-left&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;block1 pull-right&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;block2&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h4 id="toc_23">3）居中</h4>
+
+<p>为任意元素设置 .center-block 类让其中的内容居中。</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;center-block&quot;&gt;&lt;/div&gt;</code></pre></div>
+
+<h4 id="toc_24">4）显示或隐藏</h4>
+
+<p>.show 和 .hidden 类可以强制任意元素显示或隐藏(对于屏幕阅读器也能起效)，这些类只对块级元素起作用。</p>
+
+<p>另外，.invisible 类可以被用来仅仅影响元素的可见性，也就是说，元素的 display 属性不被改变，并且这个元素仍然能够影响布局。</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;show&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;hidden&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;invisible&quot;&gt;&lt;/div&gt;
+&lt;div&gt;&lt;/div&gt;</code></pre></div>
+
+<h3 id="toc_25">4. 栅格系统</h3>
+
+<h4 id="toc_26">1）什么是栅格系统</h4>
+
+<p>栅格系统用于通过一系列的行（row）与列（column）的组合来创建页面布局，内容就可以放入这些创建好的布局中。</p>
+
+<p>Bootstrap 提供的栅格系统，主要特点如下：</p>
+
+<ul>
+<li>行的宽度，可以是固定宽度，也可以是相对宽度（100%）。</li>
+<li>一行中最多可以包含 12 个列。如果一行中包含的列大于 12，多余的列则被作为一个整体另起一行排列。</li>
+<li>Bootstrap 根据 4 种分辨率提供不同的栅格系统预定义样式。</li>
+</ul>
+
+<h4 id="toc_27">2）栅格系统工作原理</h4>
+
+<p>Bootstrap 的栅格系统的工作原理如下：</p>
+
+<ul>
+<li>栅格系统必须指定一个容器元素，该元素的 class 必须为 .container（固定宽度）或 .container-fluid（100%宽度）。</li>
+<li>作为“行”的元素必须作为容器元素的直接子元素，并且 class 设置为 .row。</li>
+<li>作为“列”的元素必须是“行”元素的直接子元素（<strong>“行”元素的子元素不能直接包含内容，内容应该被包含在“列”元素中。</strong>），并且一行最多允许创建 12 列。</li>
+<li>“列”元素的预定义样式，具体内容请参考 <em>“3）栅格系统的参数”</em> 内容。</li>
+</ul>
+
+<h4 id="toc_28">3）栅格系统的参数</h4>
+
+<p>Bootstrap 根据 4 种不同的分辨率提供了不同的预定义样式（栅格类）。栅格类适用于与屏幕宽度大于或等于分界点大小的设备 ， 并且针对小屏幕设备覆盖栅格类。</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>超小屏幕</strong> 手机（&lt;768px）</th>
+<th><strong>小屏幕</strong> 平板（&gt;=768px）</th>
+<th><strong>中等屏幕</strong> 桌面显示器（&gt;=992px）</th>
+<th><strong>大屏幕</strong> 大桌面显示器（&gt;=1200px）</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>栅格系统行为</td>
+<td>总是水平排列</td>
+<td>以折叠开始，大于断点成水平方式</td>
+<td>以折叠开始，大于断点成水平方式</td>
+<td>以折叠开始，大于断点成水平方式</td>
+</tr>
+<tr>
+<td>容器宽度</td>
+<td>None（自动）</td>
+<td>750px</td>
+<td>970px</td>
+<td>1170px</td>
+</tr>
+<tr>
+<td>class 前缀</td>
+<td>.col-xs-</td>
+<td>.col-sm-</td>
+<td>.col-md-</td>
+<td>.col-lg-</td>
+</tr>
+<tr>
+<td>列数</td>
+<td>12</td>
+<td>12</td>
+<td>12</td>
+<td>12</td>
+</tr>
+<tr>
+<td>列宽</td>
+<td>自动</td>
+<td>60px</td>
+<td>78px</td>
+<td>95px</td>
+</tr>
+<tr>
+<td>槽宽</td>
+<td>30px（每列左右均为 15px）</td>
+<td>30px（每列左右均为 15px）</td>
+<td>30px（每列左右均为 15px）</td>
+<td>30px（每列左右均为 15px）</td>
+</tr>
+<tr>
+<td>可嵌套</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td>偏移</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td>排序</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_29">4）栅格系统示例</h4>
+
+<ul>
+<li>CSS 代码</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-css">body {
+    margin-top : 100px;
+}
+[class*=col-] {
+    border : 1px solid black;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}</code></pre></div>
+
+<ul>
+<li>HTML 代码</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;h3&gt;三等分列&lt;/h3&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-md-4&quot;&gt;.col-md-4&lt;/div&gt;
+        &lt;div class=&quot;col-md-4&quot;&gt;.col-md-4&lt;/div&gt;
+        &lt;div class=&quot;col-md-4&quot;&gt;.col-md-4&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;h3&gt;三不等分列&lt;/h3&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-md-3&quot;&gt;.col-md-3&lt;/div&gt;
+        &lt;div class=&quot;col-md-6&quot;&gt;.col-md-6&lt;/div&gt;
+        &lt;div class=&quot;col-md-3&quot;&gt;.col-md-3&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;h3&gt;手机、平板电脑和PC桌面不同布局&lt;/h3&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-md-3 col-sm-6 col-xs-12&quot;&gt;col-md-3 col-sm-6 col-xs-12&lt;/div&gt;
+        &lt;div class=&quot;col-md-3 col-sm-6 col-xs-12&quot;&gt;col-md-3 col-sm-6 col-xs-12&lt;/div&gt;
+        &lt;div class=&quot;col-md-3 col-sm-6 col-xs-12&quot;&gt;col-md-3 col-sm-6 col-xs-12&lt;/div&gt;
+        &lt;div class=&quot;col-md-3 col-sm-6 col-xs-12&quot;&gt;col-md-3 col-sm-6 col-xs-12&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h4 id="toc_30">5）调整列的顺序</h4>
+
+<h5 id="toc_31">a. 列偏移</h5>
+
+<p>使用 .col-md-offset-* 类可以将列向右侧偏移。（<code>*</code> 表示向右偏移的列数）</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;h3&gt;列偏移&lt;/h3&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-md-4&quot;&gt;.col-md-4&lt;/div&gt;
+        &lt;div class=&quot;col-md-4 col-md-offset-4&quot;&gt;.col-md-4 .col-md-offset-4&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-md-3 col-md-offset-3&quot;&gt;.col-md-3 .col-md-offset-3&lt;/div&gt;
+        &lt;div class=&quot;col-md-3 col-md-offset-3&quot;&gt;.col-md-3 .col-md-offset-3&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-md-6 col-md-offset-3&quot;&gt;.col-md-6 .col-md-offset-3&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h5 id="toc_32">b. 嵌套列</h5>
+
+<p>在 Bootstrap 的栅格系统允许进行嵌套。所谓<strong>栅格系统嵌套</strong>，就是指在 Bootstrap 栅格系统中的每列中允许包含一个栅格系统。</p>
+
+<blockquote>
+<p>被嵌套的“行”中所包含的列的个数依旧不能超过 12 列。</p>
+</blockquote>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;h3&gt;嵌套列&lt;/h3&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-sm-9&quot;&gt;
+            Level 1: .col-sm-9
+            &lt;div class=&quot;row&quot;&gt;
+                &lt;div class=&quot;col-xs-8 col-sm-6&quot;&gt;Level 2: .col-xs-8 .col-sm-6&lt;/div&gt;
+                &lt;div class=&quot;col-xs-4 col-sm-6&quot;&gt;Level 2: .col-xs-4 .col-sm-6&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h5 id="toc_33">c. 列排序</h5>
+
+<p>通过将栅格系统中的列向右移动（push）或向左移动（pull）来改变列的顺序。</p>
+
+<ul>
+<li><code>.col-md-push-*</code>表示向右移动</li>
+<li><code>.col-md-pull-*</code>表示向左移动</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;h3&gt;列排序&lt;/h3&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-md-9 col-md-push-3&quot;&gt;.col-md-9 .col-md-push-3&lt;/div&gt;
+        &lt;div class=&quot;col-md-3 col-md-pull-9&quot;&gt;.col-md-3 .col-md-pull-9&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h4 id="toc_34">6）响应式工具</h4>
+
+<p>通过单独或联合使用以下列出的 class，可以针对不同屏幕尺寸隐藏或显示页面内容。</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center"><strong>超小屏幕</strong> 手机（&lt;768px）</th>
+<th style="text-align: center"><strong>小屏幕</strong> 平板（&gt;=768px）</th>
+<th style="text-align: center"><strong>中等屏幕</strong> 桌面（&gt;=992px）</th>
+<th style="text-align: center"><strong>大屏幕</strong> 大桌面（&gt;=1200px）</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>.hidden-xs</td>
+<td style="text-align: center">隐藏</td>
+<td style="text-align: center">可见</td>
+<td style="text-align: center">可见</td>
+<td style="text-align: center">可见</td>
+</tr>
+<tr>
+<td>.hidden-sm</td>
+<td style="text-align: center">可见</td>
+<td style="text-align: center">隐藏</td>
+<td style="text-align: center">可见</td>
+<td style="text-align: center">可见</td>
+</tr>
+<tr>
+<td>.hidden-md</td>
+<td style="text-align: center">可见</td>
+<td style="text-align: center">可见</td>
+<td style="text-align: center">隐藏</td>
+<td style="text-align: center">可见</td>
+</tr>
+<tr>
+<td>.hidden-lg</td>
+<td style="text-align: center">可见</td>
+<td style="text-align: center">可见</td>
+<td style="text-align: center">可见</td>
+<td style="text-align: center">隐藏</td>
+</tr>
+</tbody>
+</table>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;h3&gt;响应式工具&lt;/h3&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-md-3 col-sm-4 hidden-xs&quot;&gt;.col-md-3&lt;/div&gt;
+        &lt;div class=&quot;col-md-6 col-sm-8 col-xs-12&quot;&gt;.col-md-6&lt;/div&gt;
+        &lt;div class=&quot;col-md-3 hidden-sm hidden-xs&quot;&gt;.col-md-3&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h4 id="toc_35">7）响应式栅格系统示例</h4>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;zh-CN&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Bootstrap栅格系统案例&lt;/title&gt;
+
+    &lt;!-- Bootstrap --&gt;
+    &lt;link href=&quot;bootstrap/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+
+    &lt;!--[if lt IE 9]&gt;
+    &lt;script src=&quot;bootstrap/js/html5shiv.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;bootstrap/js/respond.min.js&quot;&gt;&lt;/script&gt;
+    &lt;![endif]--&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;jumbotron&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;h1&gt;Hello, world!&lt;/h1&gt;
+        &lt;p&gt;This is a template for a simple marketing or informational website. It includes a large callout called a
+            jumbotron and three supporting pieces of content. Use it as a starting point to create something more
+            unique.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;container&quot;&gt;
+    &lt;!-- Example row of columns --&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-md-4&quot;&gt;
+            &lt;h2&gt;Heading&lt;/h2&gt;
+            &lt;p&gt;Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis
+                euismod. Donec sed odio dui. &lt;/p&gt;
+            &lt;p&gt;&lt;a class=&quot;btn btn-default&quot; href=&quot;#&quot; role=&quot;button&quot;&gt;View details &amp;raquo;&lt;/a&gt;&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-md-4&quot;&gt;
+            &lt;h2&gt;Heading&lt;/h2&gt;
+            &lt;p&gt;Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis
+                euismod. Donec sed odio dui. &lt;/p&gt;
+            &lt;p&gt;&lt;a class=&quot;btn btn-default&quot; href=&quot;#&quot; role=&quot;button&quot;&gt;View details &amp;raquo;&lt;/a&gt;&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-md-4&quot;&gt;
+            &lt;h2&gt;Heading&lt;/h2&gt;
+            &lt;p&gt;Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula
+                porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut
+                fermentum massa justo sit amet risus.&lt;/p&gt;
+            &lt;p&gt;&lt;a class=&quot;btn btn-default&quot; href=&quot;#&quot; role=&quot;button&quot;&gt;View details &amp;raquo;&lt;/a&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;hr&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;&amp;copy; 2015 Company, Inc.&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/div&gt;
+
+&lt;script src=&quot;bootstrap/js/jquery-1.11.3.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+
+<h3 id="toc_36">5. 表单</h3>
+
+<h4 id="toc_37">1）基本表单</h4>
+
+<p>Bootstrap 为单独的表单元素预定义了全局样式，表单内元素的具体使用如下：</p>
+
+<ul>
+<li>设置了 .form-control 类的 <code>&lt;input&gt;</code>、<code>&lt;textarea&gt;</code> 和 <code>&lt;select&gt;</code> 元素都将被默认设置宽度属性为 width: 100%;。</li>
+<li>将 label 元素和前面提到的控件包裹在 .form-group 中可以获得最好的排列。</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;form&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;label for=&quot;exampleInputEmail1&quot;&gt;Email address&lt;/label&gt;
+                &lt;input type=&quot;email&quot; class=&quot;form-control&quot; id=&quot;exampleInputEmail1&quot; placeholder=&quot;Email&quot;&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;label for=&quot;exampleInputPassword1&quot;&gt;Password&lt;/label&gt;
+                &lt;input type=&quot;password&quot; class=&quot;form-control&quot; id=&quot;exampleInputPassword1&quot; placeholder=&quot;Password&quot;&gt;
+            &lt;/div&gt;
+            &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot;&gt;Submit&lt;/button&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h4 id="toc_38">2）内联表单</h4>
+
+<p>为 <code>&lt;form&gt;</code> 元素添加 .form-inline 类可使其内容左对齐并且表现为 inline-block 级别的控件。</p>
+
+<blockquote>
+<p>只适用于 viewport 至少在 768px 宽度时（视口宽度再小的话就会使表单折叠）。</p>
+</blockquote>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;form class=&quot;form-inline&quot;&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;label for=&quot;exampleInputName2&quot;&gt;Name&lt;/label&gt;
+                &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;exampleInputName2&quot; placeholder=&quot;Jane Doe&quot;&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;label for=&quot;exampleInputEmail2&quot;&gt;Email&lt;/label&gt;
+                &lt;input type=&quot;email&quot; class=&quot;form-control&quot; id=&quot;exampleInputEmail2&quot; placeholder=&quot;jane.doe@example.com&quot;&gt;
+            &lt;/div&gt;
+            &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot;&gt;Send invitation&lt;/button&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<blockquote>
+<p><strong>需要注意的是：</strong></p>
+
+<p>在内联表单，我们将这些元素的宽度设置为 width: auto;，因此，多个控件可以排列在同一行。</p>
+
+<p>如果你没有为每个输入控件设置 label 标签，屏幕阅读器将无法正确识别。对于这些内联表单，你可以通过为 label 设置 .sr-only 类将其隐藏。</p>
+</blockquote>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;form class=&quot;form-inline&quot;&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;label class=&quot;sr-only&quot; for=&quot;exampleInputEmail3&quot;&gt;Email address&lt;/label&gt;
+                &lt;input type=&quot;email&quot; class=&quot;form-control&quot; id=&quot;exampleInputEmail3&quot; placeholder=&quot;Email&quot;&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;label class=&quot;sr-only&quot; for=&quot;exampleInputPassword3&quot;&gt;Password&lt;/label&gt;
+                &lt;input type=&quot;password&quot; class=&quot;form-control&quot; id=&quot;exampleInputPassword3&quot; placeholder=&quot;Password&quot;&gt;
+            &lt;/div&gt;
+            &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot;&gt;Sign in&lt;/button&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h4 id="toc_39">3）水平排列的表单</h4>
+
+<p>通过为表单添加 .form-horizontal 类，并联合使用 Bootstrap 预置的栅格类，可以将 label 标签和控件组水平并排布局。</p>
+
+<blockquote>
+<p>这样做将改变 .form-group 的行为，使其表现为栅格系统中的行（row），因此就无需再额外添加 .row 了。</p>
+</blockquote>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;form class=&quot;form-horizontal&quot;&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;label for=&quot;inputEmail3&quot; class=&quot;col-sm-2 control-label&quot;&gt;Email&lt;/label&gt;
+                &lt;div class=&quot;col-sm-10&quot;&gt;
+                    &lt;input type=&quot;email&quot; class=&quot;form-control&quot; id=&quot;inputEmail3&quot; placeholder=&quot;Email&quot;&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;label for=&quot;inputPassword3&quot; class=&quot;col-sm-2 control-label&quot;&gt;Password&lt;/label&gt;
+                &lt;div class=&quot;col-sm-10&quot;&gt;
+                    &lt;input type=&quot;password&quot; class=&quot;form-control&quot; id=&quot;inputPassword3&quot; placeholder=&quot;Password&quot;&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;div class=&quot;col-sm-offset-2 col-sm-10&quot;&gt;
+                    &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot;&gt;Sign in&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h4 id="toc_40">4）单选框和多选框</h4>
+
+<h5 id="toc_41">a. 默认外观</h5>
+
+<ul>
+<li>单选框使用 class 为 .radio</li>
+<li>多选框使用 class 为 .checkbox</li>
+</ul>
+
+<p>单选框或多选框的样式要定义在 div 元素中（该元素作为容器元素，包含文本和单选或多选框元素）。</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;form&gt;
+            &lt;div class=&quot;checkbox&quot;&gt;
+                &lt;label&gt;
+                    &lt;input type=&quot;checkbox&quot; value=&quot;&quot;&gt;
+                    Option one is this and that&amp;mdash;be sure to include why it&#39;s great
+                &lt;/label&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;checkbox disabled&quot;&gt;
+                &lt;label&gt;
+                    &lt;input type=&quot;checkbox&quot; value=&quot;&quot; disabled&gt;
+                    Option two is disabled
+                &lt;/label&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;radio&quot;&gt;
+                &lt;label&gt;
+                    &lt;input type=&quot;radio&quot; name=&quot;optionsRadios&quot; id=&quot;optionsRadios1&quot; value=&quot;option1&quot; checked&gt;
+                    Option one is this and that&amp;mdash;be sure to include why it&#39;s great
+                &lt;/label&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;radio&quot;&gt;
+                &lt;label&gt;
+                    &lt;input type=&quot;radio&quot; name=&quot;optionsRadios&quot; id=&quot;optionsRadios2&quot; value=&quot;option2&quot;&gt;
+                    Option two can be something else and selecting it will deselect option one
+                &lt;/label&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;radio disabled&quot;&gt;
+                &lt;label&gt;
+                    &lt;input type=&quot;radio&quot; name=&quot;optionsRadios&quot; id=&quot;optionsRadios3&quot; value=&quot;option3&quot; disabled&gt;
+                    Option three is disabled
+                &lt;/label&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h5 id="toc_42">b. 内联单选和多选框</h5>
+
+<p>通过将 .checkbox-inline 或 .radio-inline 类应用到一系列的多选框（checkbox）或单选框（radio）控件上，可以使这些控件排列在一行。</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;form&gt;
+            &lt;label class=&quot;checkbox-inline&quot;&gt;
+                &lt;input type=&quot;checkbox&quot; id=&quot;inlineCheckbox1&quot; value=&quot;option1&quot;&gt; 1
+            &lt;/label&gt;
+            &lt;label class=&quot;checkbox-inline&quot;&gt;
+                &lt;input type=&quot;checkbox&quot; id=&quot;inlineCheckbox2&quot; value=&quot;option2&quot;&gt; 2
+            &lt;/label&gt;
+            &lt;label class=&quot;checkbox-inline&quot;&gt;
+                &lt;input type=&quot;checkbox&quot; id=&quot;inlineCheckbox3&quot; value=&quot;option3&quot;&gt; 3
+            &lt;/label&gt;
+
+            &lt;label class=&quot;radio-inline&quot;&gt;
+                &lt;input type=&quot;radio&quot; name=&quot;inlineRadioOptions&quot; id=&quot;inlineRadio1&quot; value=&quot;option1&quot;&gt; 1
+            &lt;/label&gt;
+            &lt;label class=&quot;radio-inline&quot;&gt;
+                &lt;input type=&quot;radio&quot; name=&quot;inlineRadioOptions&quot; id=&quot;inlineRadio2&quot; value=&quot;option2&quot;&gt; 2
+            &lt;/label&gt;
+            &lt;label class=&quot;radio-inline&quot;&gt;
+                &lt;input type=&quot;radio&quot; name=&quot;inlineRadioOptions&quot; id=&quot;inlineRadio3&quot; value=&quot;option3&quot;&gt; 3
+            &lt;/label&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h2 id="toc_43">组件</h2>
+
+<h3 id="toc_44">1. 字体图标</h3>
+
+<p>Bootstrap 使用的字体图标是来自 Glyphicions Halflings 提供的。<strong>在使用的时候，需要遵守以下几点规则：</strong></p>
+
+<ul>
+<li>图标使用的 class 不能与其他组件的 class 混合使用。换言之，图标的 class 必须被定义在 span 元素上。</li>
+<li>图标使用的 class 具有一个基类和一个修饰类。基类（class）统一为 <code>.glyphicon</code>，修饰类（class）为 <code>.glyphicon-*-*</code>或<code>.glyphicon-*</code>。</li>
+<li>只对内容为空的元素起作用（图标使用的 class 只能应用在不包含任何文本内容或子元素的元素上）。</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;p class=&quot;text-danger&quot;&gt;
+        &lt;span class=&quot;glyphicon glyphicon-warning-sign&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;glyphicon glyphicon-alert&quot;&gt;&lt;/span&gt;
+        警告：您的浏览器版本太低了!
+    &lt;/p&gt;
+    &lt;button class=&quot;btn btn-success&quot; type=&quot;button&quot;&gt;
+        &lt;span class=&quot;glyphicon glyphicon-apple&quot;&gt;&lt;/span&gt;
+        删除
+    &lt;/button&gt;
+        &lt;button class=&quot;btn btn-danger&quot; type=&quot;button&quot;&gt;
+        &lt;span class=&quot;glyphicon glyphicon-arrow-left&quot;&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;button class=&quot;btn btn-default&quot; type=&quot;button&quot;&gt;
+        &lt;span class=&quot;glyphicon glyphicon-star&quot;&gt;&lt;/span&gt;
+    &lt;/button&gt;
+        &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;
+        &lt;span class=&quot;glyphicon glyphicon-play&quot;&gt;&lt;/span&gt;
+    &lt;/a&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h3 id="toc_45">2. 下拉菜单</h3>
+
+<h4 id="toc_46">1）基本样式</h4>
+
+<p>Bootstrap 提供的下拉菜单并不是 HTML 默认的 <code>&lt;select&gt;</code> 元素，而且利用一组 HTML 元素组合而成。</p>
+
+<ul>
+<li><code>&lt;div&gt;</code>元素作为容器元素</li>
+<li><p><code>&lt;button&gt;</code>或<code>&lt;a&gt;</code>元素作为下拉菜单的提示项。</p>
+
+<p>作为下拉菜单的提示项，Bootstrap 默认显示的是按钮样式（也就是需要设置 <code>class</code> 为 <code>btn btn-*</code>）。</p>
+
+<p>按钮在被点击后，会提供不同的样式效果。如果想改变这样的样式，需要添加样式<code>dropdown-toggle</code>。</p>
+
+<p>通过为下拉菜单的提示项设置属性 <code>data-toggle=dropdown</code> ，实现下拉菜单的动态显示。（此内容会在 <strong>组件</strong> 详细讲解）</p></li>
+<li><p>无序列表作为下拉菜单的列表项。</p></li>
+</ul>
+
+<h5 id="toc_47">a. 向下弹出</h5>
+
+<p>为作为下拉菜单的容器元素设置样式<code>dropdown</code>即可。</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;dropdown&quot;&gt;
+        &lt;button class=&quot;btn btn-default&quot; data-toggle=&quot;dropdown&quot;&gt;
+            Dropdown
+            &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;ul class=&quot;dropdown-menu&quot;&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Another action&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h5 id="toc_48">b. 向上弹出</h5>
+
+<p>为作为下拉菜单的容器元素设置样式<code>dropup</code>即可。</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;dropup&quot;&gt;
+        &lt;button class=&quot;btn btn-default&quot; data-toggle=&quot;dropdown&quot;&gt;
+            Dropdown
+            &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;ul class=&quot;dropdown-menu&quot;&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Another action&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h4 id="toc_49">2）标题</h4>
+
+<p>可以为作为下拉菜单的列表项中，添加 <code>class</code> 为 <code>dropdown-header</code> 的 <code>&lt;li&gt;</code> 元素作为标题，表示一组动作。</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;dropdown&quot;&gt;
+        &lt;button class=&quot;btn btn-default dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;
+            Dropdown
+            &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;ul class=&quot;dropdown-menu&quot;&gt;
+            &lt;li class=&quot;dropdown-header&quot;&gt;Dropdown header&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Another action&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+            &lt;li class=&quot;dropdown-header&quot;&gt;Dropdown header&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h4 id="toc_50">3）分割线</h4>
+
+<p>可以为作为下来菜单的列表项中，添加 <code>class</code> 为 <code>divider</code> 的 <code>&lt;li&gt;</code> 元素作为分割线，表示将多个选项进行分组。</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;dropdown&quot;&gt;
+        &lt;button class=&quot;btn btn-default dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;
+            Dropdown
+            &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;ul class=&quot;dropdown-menu&quot;&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Another action&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+            &lt;li class=&quot;divider&quot;&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h4 id="toc_51">4）禁用项</h4>
+
+<p>为下拉菜单中的 <code>&lt;li&gt;</code> 元素添加 <code>.disabled</code> 类，从而禁用相应的菜单项。</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;dropdown&quot;&gt;
+        &lt;button class=&quot;btn btn-default dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;
+            Dropdown
+            &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;ul class=&quot;dropdown-menu&quot;&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Regular link&lt;/a&gt;&lt;/li&gt;
+            &lt;li class=&quot;disabled&quot;&gt;&lt;a href=&quot;#&quot;&gt;Disabled link&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Another link&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h3 id="toc_52">3. 按钮组</h3>
+
+<h4 id="toc_53">1）基本按钮组</h4>
+
+<p>通过按钮组容器把一组按钮放在同一组里，为按钮组容器设置 <code>class</code> 为 <code>btn-group</code>。</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;btn-group&quot;&gt;
+        &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;
+            &lt;span class=&quot;glyphicon glyphicon-ok-sign&quot;&gt;&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;
+            &lt;span class=&quot;glyphicon glyphicon-remove-sign&quot;&gt;&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;
+            &lt;span class=&quot;glyphicon glyphicon-pencil&quot;&gt;&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;
+            &lt;span class=&quot;glyphicon glyphicon-check&quot;&gt;&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;
+            &lt;span class=&quot;glyphicon glyphicon-question-sign&quot;&gt;&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;
+            &lt;span class=&quot;glyphicon glyphicon-edit&quot;&gt;&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;
+            &lt;span class=&quot;glyphicon glyphicon-search&quot;&gt;&lt;/span&gt;
+        &lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h4 id="toc_54">2）不同布局</h4>
+
+<h5 id="toc_55">a. 两端对齐</h5>
+
+<p>让一组按钮拉长为相同的尺寸，填满父元素的宽度。为按钮组容器添加样式 <code>btn-group-justified</code>。</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;btn-group btn-group-justified&quot;&gt;
+        &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;
+            &lt;span class=&quot;glyphicon glyphicon-ok-sign&quot;&gt;&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;
+            &lt;span class=&quot;glyphicon glyphicon-remove-sign&quot;&gt;&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;
+            &lt;span class=&quot;glyphicon glyphicon-pencil&quot;&gt;&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;
+            &lt;span class=&quot;glyphicon glyphicon-check&quot;&gt;&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;
+            &lt;span class=&quot;glyphicon glyphicon-question-sign&quot;&gt;&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;
+            &lt;span class=&quot;glyphicon glyphicon-edit&quot;&gt;&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;
+            &lt;span class=&quot;glyphicon glyphicon-search&quot;&gt;&lt;/span&gt;
+        &lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h5 id="toc_56">b. 垂直排列</h5>
+
+<p>让一组按钮垂直堆叠排列显示而不是水平排列，为按钮组容器设置 <code>class</code> 为 <code>btn-group-vertical</code>。</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;btn-group-vertical&quot;&gt;
+        &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;
+            &lt;span class=&quot;glyphicon glyphicon-ok-sign&quot;&gt;&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;
+            &lt;span class=&quot;glyphicon glyphicon-remove-sign&quot;&gt;&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;
+            &lt;span class=&quot;glyphicon glyphicon-pencil&quot;&gt;&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;
+            &lt;span class=&quot;glyphicon glyphicon-check&quot;&gt;&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;
+            &lt;span class=&quot;glyphicon glyphicon-question-sign&quot;&gt;&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;
+            &lt;span class=&quot;glyphicon glyphicon-edit&quot;&gt;&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;
+            &lt;span class=&quot;glyphicon glyphicon-search&quot;&gt;&lt;/span&gt;
+        &lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h4 id="toc_57">3）尺寸</h4>
+
+<p>只要给 .btn-group 加上 .btn-group-* 类，就省去为按钮组中的每个按钮都赋予尺寸类。</p>
+
+<p>Bootstrap 提供了以下几种尺寸：</p>
+
+<table>
+<thead>
+<tr>
+<th>class 名称</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>btn-group-lg</td>
+<td>大</td>
+</tr>
+<tr>
+<td>btn-group-sm</td>
+<td>小</td>
+</tr>
+<tr>
+<td>btn-group-xs</td>
+<td>很小</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p>除上述尺寸外，Bootstrap 还提供一种默认尺寸（无需设置）。</p>
+</blockquote>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;btn-group btn-group-lg&quot;&gt;
+        &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;Left&lt;/a&gt;
+        &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;Middle&lt;/a&gt;
+        &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;Right&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;btn-group&quot;&gt;
+        &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;Left&lt;/a&gt;
+        &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;Middle&lt;/a&gt;
+        &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;Right&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;btn-group btn-group-sm&quot;&gt;
+        &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;Left&lt;/a&gt;
+        &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;Middle&lt;/a&gt;
+        &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;Right&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;btn-group btn-group-xs&quot;&gt;
+        &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;Left&lt;/a&gt;
+        &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;Middle&lt;/a&gt;
+        &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;Right&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h4 id="toc_58">4）按钮工具栏</h4>
+
+<p>把一组 <code>&lt;div class=&quot;btn-group&quot;&gt;</code> 组合包裹在一个 <code>&lt;div class=&quot;btn-toolbar&quot;&gt;</code> 中就可以做成更复杂的组件。</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;btn-toolbar&quot;&gt;
+        &lt;div class=&quot;btn-group&quot;&gt;
+            &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;
+                &lt;span class=&quot;glyphicon glyphicon-ok-sign&quot;&gt;&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;
+                &lt;span class=&quot;glyphicon glyphicon-remove-sign&quot;&gt;&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;
+                &lt;span class=&quot;glyphicon glyphicon-pencil&quot;&gt;&lt;/span&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;btn-group&quot;&gt;
+            &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;
+                &lt;span class=&quot;glyphicon glyphicon-check&quot;&gt;&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;
+                &lt;span class=&quot;glyphicon glyphicon-question-sign&quot;&gt;&lt;/span&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;btn-group&quot;&gt;
+            &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;
+                &lt;span class=&quot;glyphicon glyphicon-edit&quot;&gt;&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a class=&quot;btn btn-info&quot; href=&quot;#&quot;&gt;
+                &lt;span class=&quot;glyphicon glyphicon-search&quot;&gt;&lt;/span&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h4 id="toc_59">5）嵌套下拉菜单</h4>
+
+<p>想要把下拉菜单混合到一系列按钮中，只须把 .btn-group 放入另一个 .btn-group 中。</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;btn-group&quot;&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot;&gt;1&lt;/button&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot;&gt;2&lt;/button&gt;
+
+        &lt;div class=&quot;btn-group&quot; role=&quot;group&quot;&gt;
+            &lt;button class=&quot;btn btn-default dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;
+                Dropdown
+                &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;ul class=&quot;dropdown-menu&quot;&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Dropdown link&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Dropdown link&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h3 id="toc_60">4. 警告框</h3>
+
+<p>警告框组件通过提供一些灵活的预定义消息，为常见的用户动作提供反馈消息。</p>
+
+<h4 id="toc_61">1）基本警告框</h4>
+
+<p>Bootstrap 的警告框样式由 <code>.alert</code> 和 4 个修饰<code>class</code>组成。4 个修饰<code>class</code>表示不同的警告信息。</p>
+
+<table>
+<thead>
+<tr>
+<th>class 名称</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>alert-success</td>
+<td>成功</td>
+</tr>
+<tr>
+<td>alert-info</td>
+<td>信息</td>
+</tr>
+<tr>
+<td>alert-warning</td>
+<td>警告</td>
+</tr>
+<tr>
+<td>alert-danger</td>
+<td>危险</td>
+</tr>
+</tbody>
+</table>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;alert alert-danger&quot;&gt;
+        &lt;span class=&quot;glyphicon glyphicon-alert&quot;&gt;&lt;/span&gt;
+        您的浏览器禁用了Cookie！本站的部分功能无法启用！
+    &lt;/div&gt;
+    &lt;div class=&quot;alert alert-info&quot;&gt;
+        &lt;span class=&quot;glyphicon glyphicon-alert&quot;&gt;&lt;/span&gt;
+        没有更多数据可供加载了！
+    &lt;/div&gt;
+
+    &lt;div class=&quot;alert alert-warning&quot;&gt;
+        &lt;span class=&quot;glyphicon glyphicon-alert&quot;&gt;&lt;/span&gt;
+        您的浏览器OUT啦！请使用更新版本的浏览器!
+    &lt;/div&gt;
+
+    &lt;div class=&quot;alert alert-success&quot;&gt;
+        &lt;span class=&quot;glyphicon glyphicon-alert&quot;&gt;&lt;/span&gt;
+        您已经登录了！无需再次登录！
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h4 id="toc_62">2）可关闭的警告框</h4>
+
+<p>为警告框添加一个可选的 .alert-dismissible 类和一个关闭按钮。</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;alert alert-success alert-dismissible&quot;&gt;
+        &lt;!--.close元素必须是alert的第一个子元素--&gt;
+        &lt;span data-dismiss=&quot;alert&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/span&gt;
+        &lt;span class=&quot;glyphicon glyphicon-alert&quot;&gt;&lt;/span&gt;
+        您已经登录了！无需再次登录！
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h4 id="toc_63">3）警告框中的链接</h4>
+
+<p>用 .alert-link 工具类，可以为链接设置与当前警告框相符的颜色。</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;alert alert-warning&quot;&gt;
+        &lt;span class=&quot;glyphicon glyphicon-alert&quot;&gt;&lt;/span&gt;
+        您的浏览器OUT啦！请使用更新版本的&lt;a href=&quot;#&quot; class=&quot;alert-link&quot;&gt;浏览器&lt;/a&gt;!
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<blockquote>
+<p><strong>本笔记由 <em>金云龙</em> 编写</strong></p>
+
+<p>作者博客地址：<a href="http://www.longestory.com">龙哥有话说</a></p>
+
+<p>如转载或发布，请注明作者名称</p>
+</blockquote>
+
+
+
+<script type="text/javascript">
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+<script type="text/javascript">
+Prism.languages.markup={comment:/<!--[\w\W]*?-->/,prolog:/<\?[\w\W]+?\?>/,doctype:/<!DOCTYPE[\w\W]+?>/,cdata:/<!\[CDATA\[[\w\W]*?]]>/i,tag:{pattern:/<\/?(?!\d)[^\s>\/=.$<]+(?:\s+[^\s>\/=]+(?:=(?:("|')(?:\\\1|\\?(?!\1)[\w\W])*\1|[^\s'">=]+))?)*\s*\/?>/i,inside:{tag:{pattern:/^<\/?[^\s>\/]+/i,inside:{punctuation:/^<\/?/,namespace:/^[^\s>\/:]+:/}},"attr-value":{pattern:/=(?:('|")[\w\W]*?(\1)|[^\s>]+)/i,inside:{punctuation:/[=>"']/}},punctuation:/\/?>/,"attr-name":{pattern:/[^\s>\/]+/,inside:{namespace:/^[^\s>\/:]+:/}}}},entity:/&#?[\da-z]{1,8};/i},Prism.hooks.add("wrap",function(a){"entity"===a.type&&(a.attributes.title=a.content.replace(/&amp;/,"&"))}),Prism.languages.xml=Prism.languages.markup,Prism.languages.html=Prism.languages.markup,Prism.languages.mathml=Prism.languages.markup,Prism.languages.svg=Prism.languages.markup;
+</script>
+
+<script type="text/javascript">
+Prism.languages.css={comment:/\/\*[\w\W]*?\*\//,atrule:{pattern:/@[\w-]+?.*?(;|(?=\s*\{))/i,inside:{rule:/@[\w-]+/}},url:/url\((?:(["'])(\\(?:\r\n|[\w\W])|(?!\1)[^\\\r\n])*\1|.*?)\)/i,selector:/[^\{\}\s][^\{\};]*?(?=\s*\{)/,string:/("|')(\\(?:\r\n|[\w\W])|(?!\1)[^\\\r\n])*\1/,property:/(\b|\B)[\w-]+(?=\s*:)/i,important:/\B!important\b/i,"function":/[-a-z0-9]+(?=\()/i,punctuation:/[(){};:]/},Prism.languages.css.atrule.inside.rest=Prism.util.clone(Prism.languages.css),Prism.languages.markup&&(Prism.languages.insertBefore("markup","tag",{style:{pattern:/(<style[\w\W]*?>)[\w\W]*?(?=<\/style>)/i,lookbehind:!0,inside:Prism.languages.css,alias:"language-css"}}),Prism.languages.insertBefore("inside","attr-value",{"style-attr":{pattern:/\s*style=("|').*?\1/i,inside:{"attr-name":{pattern:/^\s*style/i,inside:Prism.languages.markup.tag.inside},punctuation:/^\s*=\s*['"]|['"]\s*$/,"attr-value":{pattern:/.+/i,inside:Prism.languages.css}},alias:"language-css"}},Prism.languages.markup.tag));
+</script>
+
+<script type="text/javascript">
+Prism.languages.css.selector={pattern:/[^\{\}\s][^\{\}]*(?=\s*\{)/,inside:{"pseudo-element":/:(?:after|before|first-letter|first-line|selection)|::[-\w]+/,"pseudo-class":/:[-\w]+(?:\(.*\))?/,"class":/\.[-:\.\w]+/,id:/#[-:\.\w]+/}},Prism.languages.insertBefore("css","function",{hexcode:/#[\da-f]{3,6}/i,entity:/\\[\da-f]{1,8}/i,number:/[\d%\.]+/});
+</script>
+
+<script type="text/javascript">
+!function(){"undefined"!=typeof self&&self.Prism&&self.document&&Prism.hooks.add("complete",function(e){if(e.code){var t=e.element.parentNode,s=/\s*\bline-numbers\b\s*/;if(t&&/pre/i.test(t.nodeName)&&(s.test(t.className)||s.test(e.element.className))&&!e.element.querySelector(".line-numbers-rows")){s.test(e.element.className)&&(e.element.className=e.element.className.replace(s,"")),s.test(t.className)||(t.className+=" line-numbers");var n,a=e.code.match(/\n(?!$)/g),l=a?a.length+1:1,m=new Array(l+1);m=m.join("<span></span>"),n=document.createElement("span"),n.className="line-numbers-rows",n.innerHTML=m,t.hasAttribute("data-start")&&(t.style.counterReset="linenumber "+(parseInt(t.getAttribute("data-start"),10)-1)),e.element.appendChild(n)}}})}();
+</script>
+
+
+</body>
+
+</html>

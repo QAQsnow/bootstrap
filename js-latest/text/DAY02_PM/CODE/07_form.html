@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <!-- 让 Bootstrap 兼容 IE 兼容模型 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- 让 Bootstrap 兼容 国产浏览器的高速模型 -->
+  <meta name="renderer" content="webkit">
+  <!-- 实现响应式的设置 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap表单</title>
+  <!-- 引入 Bootstrap 的 CSS 文件 -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- 
+    IE 9版本之前的 IE 浏览器并不支持 HTML 5 提供的新标签
+    通过 html5shiv.js 文件实现兼容
+-->
+  <!-- 
+    IE 9版本之前的 IE 浏览器并不支持 CSS 3 提供的媒体查询
+    通过 respond.js 文件实现兼容
+-->
+  <!--[if lt IE 9]>
+<script src="js/html5shiv.min.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+  <style>
+    body {
+      padding-top : 100px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <!--
+  <form action="01_buttons.html" method="post">
+    <input type="text" id="username" name="username"/>
+    <input type="submit"/>
+  </form>
+  -->
+  <!-- TODO Bootstrap 表单
+       TODO * 容器元素<form> - 没有class
+       TODO * 表单组件
+  -->
+  <form action="#">
+    <!-- TODO 表单组件的容器元素
+         TODO * 使用<div>元素
+         TODO * 使用 .form-group 指定
+    -->
+    <div class="form-group">
+      <!-- TODO 表单组件
+           TODO * 文本提示内容
+           TODO   * 使用<label>元素
+           TODO * 表单组件元素
+           TODO   * 使用 .form-control 指定
+           TODO 14:45 - 14:55 练习
+           TODO 14:55 - 15:05 休息
+      -->
+      <label for="user">用户名:</label>
+      <input class="form-control" type="text" id="user" name="username"/>
+    </div>
+    <div class="form-group">
+      <label for="pwd">密码:</label>
+      <input class="form-control" type="password" id="pwd" name="password"/>
+    </div>
+    <div class="form-group">
+      <input class="btn btn-info" type="submit"/>
+    </div>
+  </form>
+  <br/><br/><br/>
+  <!-- TODO 内联表单 <form class="form-inline">-->
+  <form class="form-inline" action="#">
+    <div class="form-group">
+      <label for="user2">用户名:</label>
+      <input class="form-control" type="text" id="user2" name="username"/>
+    </div>
+    <div class="form-group">
+      <label for="pwd2">密码:</label>
+      <input class="form-control" type="password" id="pwd2" name="password"/>
+    </div>
+    <div class="form-group">
+      <input class="btn btn-info" type="submit"/>
+    </div>
+  </form>
+  <br/><br/><br/>
+  <!-- TODO 水平排列表单 <form class="form-horizontal">-->
+  <form class="form-horizontal" action="#">
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="user3">用户名:</label>
+      <div class="col-sm-10">
+        <input class="form-control" type="text" id="user3" name="username"/>
+      </div>
+      <!--
+      <div class="col-sm-2">
+        TODO 表单验证错误提示信息
+        <label class="text-danger">不能为空</label>
+      </div>
+      -->
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="pwd3">密码:</label>
+      <div class="col-sm-10">
+        <input class="form-control" type="password" id="pwd3" name="password"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-10 col-sm-offset-2">
+        <input class="btn btn-info" type="submit"/>
+      </div>
+    </div>
+  </form>
+  <br/><br/><br/>
+
+  <form action="#">
+    <!-- TODO 表单容器元素-->
+    <div class="form-group">
+      <!-- TODO 单选框或多选框的容器元素-->
+      <div class="checkbox">
+        <!-- TODO 文本提示内容-->
+        <label>
+          <!-- TODO 单选框或多选框的控件-->
+          <input type="checkbox"/>男
+        </label>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<!-- 引入 jQuery 文件 -->
+<script src="js/jquery-1.11.3.js"></script>
+<!-- 引入 Bootstrap 的 JS 文件 -->
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

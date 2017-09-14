@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <!-- 让 Bootstrap 兼容 IE 兼容模型 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- 让 Bootstrap 兼容 国产浏览器的高速模型 -->
+  <meta name="renderer" content="webkit">
+  <!-- 实现响应式的设置 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap的弹出框</title>
+  <!-- 引入 Bootstrap 的 CSS 文件 -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- 
+    IE 9版本之前的 IE 浏览器并不支持 HTML 5 提供的新标签
+    通过 html5shiv.js 文件实现兼容
+-->
+  <!-- 
+    IE 9版本之前的 IE 浏览器并不支持 CSS 3 提供的媒体查询
+    通过 respond.js 文件实现兼容
+-->
+  <!--[if lt IE 9]>
+<script src="js/html5shiv.min.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+  <style>
+    body {
+      padding-top : 100px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <!-- TODO 弹出框
+       TODO * title属性 - 设置弹出框的标题内容
+       TODO * data-content属性 - 设置弹出框的显示内容
+       TODO * data-toggle="popover"
+       TODO 弹出框默认在右显示
+  -->
+  <button
+    title="这是弹出框"
+    data-content="这是弹出框的文本内容."
+    data-toggle="popover"
+    data-placement="top"
+    class="btn btn-default">
+    弹出框
+  </button>
+</div>
+
+
+<!-- 引入 jQuery 文件 -->
+<script src="js/jquery-1.11.3.js"></script>
+<!-- 引入 Bootstrap 的 JS 文件 -->
+<script src="js/bootstrap.min.js"></script>
+<script>
+  /*
+      TODO 1. 获取 HTML 元素
+      TODO 2. 调用 popover() 方法
+   */
+  //$("button").popover();
+</script>
+</body>
+</html>

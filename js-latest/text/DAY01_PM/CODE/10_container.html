@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <!-- 让 Bootstrap 兼容 IE 兼容模型 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- 让 Bootstrap 兼容 国产浏览器的高速模型 -->
+  <meta name="renderer" content="webkit">
+  <!-- 实现响应式的设置 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap的布局容器</title>
+  <!-- 引入 Bootstrap 的 CSS 文件 -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- 
+    IE 9版本之前的 IE 浏览器并不支持 HTML 5 提供的新标签
+    通过 html5shiv.js 文件实现兼容
+-->
+  <!-- 
+    IE 9版本之前的 IE 浏览器并不支持 CSS 3 提供的媒体查询
+    通过 respond.js 文件实现兼容
+-->
+  <!--[if lt IE 9]>
+<script src="js/html5shiv.min.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+<!--
+    TODO Bootstrap 提供了两种布局容器
+    TODO * .container - 宽度是固定值
+    TODO   * 手机(<768) - 100%
+    TODO   * 平板(768-992) - 750px
+    TODO   * 桌面(992-1200) - 970px
+    TODO   * 大桌面(>1200) - 1170px
+    TODO * .container-fluid - 宽度是 100%
+
+    TODO Bootstrap布局之前,先定义容器
+-->
+<!-- TODO 容器(表格) -->
+<div class="container">
+  <!-- TODO 行-->
+  <div class="row">
+    <!-- TODO 列-->
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6"></div>
+    <div class="col-sm-3"></div>
+  </div>
+</div>
+<!--
+    HTML 页面大量的使用 <div> 元素
+    * 页面语义化不够好
+    什么叫做页面语义化?
+    * 编写 HTML 元素时，具有具体的含义的
+      * 例如 <header>头部、<h1>标题、<p>段落等
+    * <div>、<span>等元素是否是语义化元素?否
+      * 盲人 - 屏幕阅读器(标签转义)
+    * Bootstrap 提供自定义的语义化方式
+      * 扩展了 HTML 元素的属性 - role
+-->
+
+<!-- 引入 jQuery 文件 -->
+<script src="js/jquery-1.11.3.js"></script>
+<!-- 引入 Bootstrap 的 JS 文件 -->
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

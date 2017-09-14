@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+/* TODO 需求
+   TODO * 如果是手机端，左右两个组件隐藏
+   TODO * 如果是PAD端，右组件组件隐藏
+   TODO 16:00 - 16:05 练习
+   TODO 16:05 - 16:15 休息
+ */
+@media only screen and (max-width: 576px){
+  /* TODO 手机端 */
+  #menu {
+    display: none;
+  }
+  #ass {
+    display: none;
+  }
+}
+@media only screen and (max-width: 768px) {
+  /* TODO 移动端所有组件宽度为 100%
+  [class*="col-"] {
+    width: 100%;
+  }
+  */
+  /* 平板电脑端 */
+  #ass {
+    display: none;
+  }
+}

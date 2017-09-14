@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <!-- 让 Bootstrap 兼容 IE 兼容模型 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- 让 Bootstrap 兼容 国产浏览器的高速模型 -->
+  <meta name="renderer" content="webkit">
+  <!-- 实现响应式的设置 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap模态框</title>
+  <!-- 引入 Bootstrap 的 CSS 文件 -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- 
+    IE 9版本之前的 IE 浏览器并不支持 HTML 5 提供的新标签
+    通过 html5shiv.js 文件实现兼容
+-->
+  <!-- 
+    IE 9版本之前的 IE 浏览器并不支持 CSS 3 提供的媒体查询
+    通过 respond.js 文件实现兼容
+-->
+  <!--[if lt IE 9]>
+<script src="js/html5shiv.min.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+  <style>
+    body {
+      padding-top : 100px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <!-- TODO 用于动态显示模态框的按钮
+       TODO * 具有动态交互效果(data-*属性)
+       TODO   * data-toggle="modal" - 动态交互
+       TODO   * data-target="#锚点"
+   -->
+  <button
+    data-toggle="modal"
+    data-target="#myModal"
+    class="btn btn-primary">
+    打开
+  </button>
+  <!-- TODO 模态框
+       TODO * 作为模态框的容器元素
+       TODO   <div class="modal"></div>
+       TODO * 作为模态框的对话框
+       TODO   <div class="modal">
+       TODO      <div class="modal-dialog"></div>
+       TODO   </div>
+       TODO * 作为对话框的内容
+       TODO   <div class="modal">
+       TODO      <div class="modal-dialog">
+       TODO         <div class="modal-content">
+       TODO         * 模态框的头部
+       TODO           class 为 .modal-header
+       TODO         * 模态框的主体
+       TODO           class 为 .modal-body
+       TODO         * 模态框的注脚
+       TODO           class 为 .model-footer
+       TODO         </div>
+       TODO      </div>
+       TODO   </div>
+       TODO 弹出的效果
+       TODO Bootstrap提供的效果与jQuery UI实现的模态框不一样
+       TODO 正常关闭模态框
+       TODO <button>按钮设置 data-dismiss="modal"
+  -->
+  <div id="myModal" class="modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- TODO 需要注意的
+               TODO 必须先定义关闭按钮，再定义标题内容
+               TODO 警告框(alert)的关闭按钮跟顺序无关
+          -->
+          <!-- TODO 关闭按钮 -->
+          <button
+            data-dismiss="modal"
+            class="close">
+            <span>&times;</span>
+          </button>
+          <!-- TODO 头部内容 -->
+          <h4>模态框标题</h4>
+        </div>
+        <div class="modal-body">
+          <p>模态框的主体内容.</p>
+        </div>
+        <div class="modal-footer">
+          <button
+            data-dismiss="modal"
+            class="btn btn-default">
+            关闭
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- 引入 jQuery 文件 -->
+<script src="js/jquery-1.11.3.js"></script>
+<!-- 引入 Bootstrap 的 JS 文件 -->
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

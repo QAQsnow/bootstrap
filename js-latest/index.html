@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <!-- 让 Bootstrap 兼容 IE 兼容模型 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- 让 Bootstrap 兼容 国产浏览器的高速模型 -->
+  <meta name="renderer" content="webkit">
+  <!-- 实现响应式的设置 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap完成的Intel官网案例</title>
+  <!-- 引入 Bootstrap 的 CSS 文件 -->
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- 引入 案例定制的 CSS 文件 -->
+  <link rel="stylesheet" href="css/intel_final.css"/>
+
+  <!-- 
+    IE 9版本之前的 IE 浏览器并不支持 HTML 5 提供的新标签
+    通过 html5shiv.js 文件实现兼容
+-->
+  <!-- 
+    IE 9版本之前的 IE 浏览器并不支持 CSS 3 提供的媒体查询
+    通过 respond.js 文件实现兼容
+-->
+<!--[if lt IE 9]>
+<script src="js/html5shiv.min.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+<!-- TODO 完成案例项目
+     TODO 1. 根据效果图进行分析 - 页面的布局
+     TODO 2. 根据布局分析每个组件 - 静态效果
+     TODO 3. 基于静态效果添加动态交互
+     TODO    直接使用插件完成 + 自定义完成
+     TODO 4. 基于Bootstrap默认样式,添加自定义样式
+-->
+<!-- TODO a. 页面的导航条 -->
+<!-- TODO 导航条的容器元素 -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <!-- TODO 针对移动端的容器元素
+       TODO * 汉堡包按钮
+  -->
+    <div class="navbar-header">
+      <!-- TODO 汉堡包按钮 -->
+      <button
+        data-toggle="collapse"
+        data-target="#mynavbar"
+        class="navbar-toggle collapsed">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- TODO 品牌图标 -->
+      <a class="navbar-brand" href="#">
+        <!--<img src="imgs/logo.png"/>-->
+      </a>
+    </div>
+    <!-- TODO 针对桌面端的容器元素(导航条的组件)
+         TODO 1. 下拉菜单
+         TODO 2. 搜索表单
+         TODO 3. 两个按钮
+    -->
+    <div id="mynavbar" class="collapse navbar-collapse">
+      <!-- TODO 下拉菜单 - 居左
+           TODO 问题:当前导航条无法直接定义下拉菜单
+           TODO 解决方案:
+           TODO * 当前导航条中定义导航组件(标签页)
+           TODO * 导航组件(标签页)中嵌套下拉菜单
+       -->
+      <!-- TODO 1) 导航组件(标签页) -->
+      <ul class="nav navbar-nav">
+        <!-- TODO 2) 下拉菜单
+             TODO * 既作为标签页的标签(被激活的状态)
+             TODO   class 为 .active
+             TODO * 又作为下拉菜单的容器
+             TODO   class 为 .dropdown
+         -->
+        <li class="active dropdown">
+          <!-- TODO 用于点击弹出菜单的按钮
+               TODO 增加动态交互效果
+           -->
+          <a data-toggle="dropdown" href="#">
+            菜单
+            <span class="caret"></span>
+          </a>
+          <!-- TODO 用于动态显示的菜单列表 -->
+          <ul class="dropdown-menu">
+            <li><a href="#">英特尔产品</a></li>
+            <li><a href="#">热点话题</a></li>
+            <li class="divider"></li>
+            <li><a href="#">用户</a></li>
+            <li><a href="#">购买</a></li>
+            <li class="divider"></li>
+            <li><a href="#">产品支持</a></li>
+            <li class="divider"></li>
+            <li><a href="#">关于英特尔</a></li>
+          </ul>
+        </li>
+      </ul>
+      <!-- TODO 中文切换+登录按钮 - 居右
+           TODO * 定义导航组件(标签页)
+           TODO   * 标签:1)中文切换;2)登录按钮
+       -->
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">China(简体中文)</a></li>
+        <!-- TODO 下拉菜单的容器 -->
+        <li>
+          <!-- TODO 用于点击的按钮 -->
+          <a data-toggle="dropdown" href="#">登录</a>
+          <!-- TODO 用于显示的菜单(登录功能)
+               TODO 注意:
+               TODO * 由于菜单要完成是登录功能,而不是原本的菜单
+               TODO   不需要使用<ul>和<li>标签
+               TODO * 作为下拉菜单的菜单标签,样式必须还在
+               TODO   class 为 .dropdown-menu
+           -->
+          <div class="dropdown-menu">
+            <!-- TODO 面板组件 -->
+            <div class="panel">
+              <!-- TODO 面板的头部(标题) -->
+              <div class="panel-heading">
+                <h3>登录</h3>
+                <p>您是否在英特尔工作?</p>
+              </div>
+              <!-- TODO 面板的主体(登录表单) -->
+              <div class="panel-body">
+                <!-- TODO 表单 -->
+                <form action="#">
+                  <div class="form-group">
+                    <input class="form-control" type="text"
+                           placeholder="请输入用户名"/>
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" type="password"
+                           placeholder="请输入密码"/>
+                  </div>
+                  <div class="form-group">
+                    <!-- TODO 静态表单组件 -->
+                    <p class="form-control-static">
+                      您登录表明您同意我们的服务条款.
+                    </p>
+                  </div>
+                  <div class="form-group">
+                    <button class="btn btn-success btn-sm">
+                      登录
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <!-- TODO 搜索框 - 居右
+           TODO * 定义的是导航条中的表单
+           TODO   class 为 .navbar-form
+       -->
+      <form class="navbar-form navbar-right" action="#">
+        <!-- TODO 静态的文本提示内容 -->
+        <div class="form-group">
+          <p class="form-control-static">查找内容</p>
+          <p class="form-control-static">|</p>
+        </div>
+        <!-- TODO 搜索框组件 -->
+        <div class="form-group has-feedback">
+          <input class="form-control"
+                 type="search"
+                 placeholder="搜索"/>
+          <!-- TODO 引入表示搜索的图标
+               TODO * 图标显示在搜索框的最右边(内)
+               TODO   class 为 .form-control-feedback
+               TODO   为当前组件的容器设置指定 class
+               TODO   class 为 .has-feedback
+           -->
+          <span class="glyphicon glyphicon-search form-control-feedback"></span>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- TODO b. 页面的主体 -->
+<!-- TODO 布局容器 -->
+<div id="mybody" class="container">
+  <!-- TODO 定义 栅格系统的 行 -->
+  <div class="row">
+    <!-- TODO 左边的占位 8 列 -->
+    <div class="col-md-8 col-sm-12 col-xs-12">
+      <!-- TODO 显示一张图片
+           TODO 设置响应式图片(width : 100%)
+       -->
+      <img class="img-responsive"
+           src="imgs/intel.web.864.486.1.jpg"/>
+      <div class="img-title">
+        <!-- TODO 标题内容 -->
+        <h2>五代酷睿芯，强劲创体验</h2>
+        <!-- TODO 描述内容 -->
+        <p>第五代智能英特尔®酷睿™处理器锋芒登场，革命性突破的领先技术，彻底颠覆传统PC使用体验，带您进入全新数字世界</p>
+        <!-- TODO 按钮-->
+        <a href="#" class="btn btn-info">
+          立即探索第五代智能英特尔®酷睿™处理
+        </a>
+      </div>
+    </div>
+    <!-- TODO 右边的占位 4 列 -->
+    <div class="col-md-4 col-sm-12 col-xs-12">
+      <!-- TODO 一行多列 -->
+      <div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <!-- TODO 显示一张图片 -->
+          <img class="img-responsive"
+               src="imgs/intel.web.368.207.1.jpg"/>
+          <div class="half-mask">
+            <!-- TODO 标题内容 -->
+            <h4>解密2合1电脑</h4>
+            <!-- TODO 描述内容 -->
+            <p>搭载英特尔处理器的2合1电脑，助你高效工作的同时带给你灵活可触控的平板体验。</p>
+            <!-- TODO 链接-->
+            <a href="#">了解更多</a>
+          </div>
+        </div>
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <!-- TODO 媒体对象组件 -->
+          <div class="media">
+            <div class="media-left">
+              <!-- TODO 引入图片 -->
+              <img class="media-object"
+                   src="imgs/intel.web.81.108.png"/>
+            </div>
+            <div class="media-body">
+              <!-- TODO 无样式列表 -->
+              <ul class="list-unstyled">
+                <li><a href="#">英特尔® 酷睿™ M 处理器</a></li>
+                <li><a href="#">才貌双全的家用一体机</a></li>
+                <li><a href="#">英特尔® 凌动™ 处理器</a></li>
+                <li><a href="#">2015 台北国际电脑展</a></li>
+                <li><a href="#">风暴英雄游戏道具兑换</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- TODO 多行多列
+      <div class="row">
+        <div class="col-md-12"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-12"></div>
+      </div>
+       -->
+    </div>
+  </div>
+</div>
+<!-- TODO c. 页面的注脚 -->
+<!-- TODO 作为 页面注脚的 容器 -->
+<div id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <!-- TODO 标题内容 -->
+        <h4>关于英特尔</h4>
+        <!-- TODO 无样式列表 -->
+        <ul class="list-unstyled">
+          <li><a href="#">选项</a></li>
+          <li><a href="#">选项</a></li>
+          <li><a href="#">选项</a></li>
+          <li><a href="#">选项</a></li>
+          <li><a href="#">选项</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <!-- TODO 标题内容 -->
+        <h4>关于英特尔</h4>
+        <!-- TODO 无样式列表 -->
+        <ul class="list-unstyled">
+          <li><a href="#">选项</a></li>
+          <li><a href="#">选项</a></li>
+          <li><a href="#">选项</a></li>
+          <li><a href="#">选项</a></li>
+          <li><a href="#">选项</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <!-- TODO 标题内容 -->
+        <h4>关于英特尔</h4>
+        <!-- TODO 无样式列表 -->
+        <ul class="list-unstyled">
+          <li><a href="#">选项</a></li>
+          <li><a href="#">选项</a></li>
+          <li><a href="#">选项</a></li>
+          <li><a href="#">选项</a></li>
+          <li><a href="#">选项</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <!-- TODO 标题内容 -->
+        <h4>关于英特尔</h4>
+        <!-- TODO 无样式列表 -->
+        <ul class="list-unstyled">
+          <li><a href="#">选项</a></li>
+          <li><a href="#">选项</a></li>
+          <li><a href="#">选项</a></li>
+          <li><a href="#">选项</a></li>
+          <li><a href="#">选项</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 引入 jQuery 文件 -->
+<script src="js/jquery-1.11.3.js"></script>
+<!-- 引入 Bootstrap 的 JS 文件 -->
+<script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <!-- 让 Bootstrap 兼容 IE 兼容模型 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- 让 Bootstrap 兼容 国产浏览器的高速模型 -->
+  <meta name="renderer" content="webkit">
+  <!-- 实现响应式的设置 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap导航条</title>
+  <!-- 引入 Bootstrap 的 CSS 文件 -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- 
+    IE 9版本之前的 IE 浏览器并不支持 HTML 5 提供的新标签
+    通过 html5shiv.js 文件实现兼容
+-->
+  <!-- 
+    IE 9版本之前的 IE 浏览器并不支持 CSS 3 提供的媒体查询
+    通过 respond.js 文件实现兼容
+-->
+  <!--[if lt IE 9]>
+<script src="js/html5shiv.min.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+<!-- TODO 导航条
+     TODO * 宽度为 100% 的效果时,不能被包含在 .container 中
+-->
+<!-- TODO 导航条的容器 -->
+<nav class="navbar navbar-inverse">
+  <!-- TODO 针对移动端的导航条容器
+       TODO 使用 class 为 .navbar-header
+   -->
+  <div class="navbar-header">
+    <!-- TODO 移动端的导航条组件(固定)
+         TODO * 具有<button>按钮
+         TODO   * 使用 class 为 .navbar-toggle .collapsed
+         TODO   * 包含内容是固定的
+         TODO     <span class="icon-bar"></span>
+     -->
+    <!-- TODO 汉堡包按钮
+         TODO 添加动态交互效果
+         TODO * data-toggle属性 - 交互效果
+         TODO * data-target属性 - 设置显示的内容
+     -->
+    <button data-toggle="collapse" data-target="#mynavbar" class="navbar-toggle collapsed">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+  <!-- TODO 针对桌面端的导航条容器
+       TODO * 使用 class 为 .collapse .navbar-collapse
+   -->
+  <div id="mynavbar" class="collapse navbar-collapse">
+    <!-- TODO 导航条中的组件(表单) -->
+    <form class="navbar-form" action="#">
+      <div class="form-group">
+        <input class="form-control" type="search"/>
+        <button class="btn btn-default">
+          搜索
+        </button>
+      </div>
+    </form>
+  </div>
+</nav>
+
+<!-- 引入 jQuery 文件 -->
+<script src="js/jquery-1.11.3.js"></script>
+<!-- 引入 Bootstrap 的 JS 文件 -->
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

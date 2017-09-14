@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>自定义属性</title>
+  <style>
+    div {
+      width : 300px;
+      height : 200px;
+      border : 1px solid black;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <button data-toggle="dropdown">按钮</button>
+  <div id="dd"></div>
+  <script src="js/jquery-1.11.3.js"></script>
+  <script>
+    /*
+    var btn = document.getElementById("btn");
+    btn.onclick = function(){
+      // 显示div
+      var dd = document.getElementById("dd");
+      dd.style.display = "block";
+    }*/
+
+    // TODO 1 获取button按钮
+    var $btn = $("button");
+    // TODO 2 获取指定属性名称(data-toggle)
+    var e = $btn.attr("data-toggle");
+    // TODO 3 判断属性的值(动态效果)
+    if(e == "dropdown"){
+      // 动态显示
+    }
+  </script>
+</body>
+</html>

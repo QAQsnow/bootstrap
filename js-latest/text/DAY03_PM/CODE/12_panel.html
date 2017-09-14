@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <!-- 让 Bootstrap 兼容 IE 兼容模型 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- 让 Bootstrap 兼容 国产浏览器的高速模型 -->
+  <meta name="renderer" content="webkit">
+  <!-- 实现响应式的设置 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap手风琴效果</title>
+  <!-- 引入 Bootstrap 的 CSS 文件 -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- 
+    IE 9版本之前的 IE 浏览器并不支持 HTML 5 提供的新标签
+    通过 html5shiv.js 文件实现兼容
+-->
+  <!-- 
+    IE 9版本之前的 IE 浏览器并不支持 CSS 3 提供的媒体查询
+    通过 respond.js 文件实现兼容
+-->
+  <!--[if lt IE 9]>
+<script src="js/html5shiv.min.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+  <style>
+    body {
+      padding-top : 100px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <!-- TODO 面板组件
+       TODO 面板组件的容器
+       TODO * 基类 - .panel
+       TODO * 修饰类 - .panel-*
+   -->
+  <div class="panel panel-info">
+    <!-- TODO 面板成员组件
+         TODO * 面板标题 - .panel-heading
+         TODO * 面板主体 - .panel-body
+         TODO * 面板注脚 - .panel-footer
+    -->
+    <div class="panel-heading">
+      <h4>这是标题</h4>
+    </div>
+    <div class="panel-body">
+      <p>这是一段作为主体的文本内容.</p>
+    </div>
+    <div class="panel-footer">
+      <h5>这是注脚.</h5>
+    </div>
+  </div>
+</div>
+
+
+<!-- 引入 jQuery 文件 -->
+<script src="js/jquery-1.11.3.js"></script>
+<!-- 引入 Bootstrap 的 JS 文件 -->
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

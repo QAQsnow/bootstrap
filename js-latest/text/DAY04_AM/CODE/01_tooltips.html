@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <!-- 让 Bootstrap 兼容 IE 兼容模型 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- 让 Bootstrap 兼容 国产浏览器的高速模型 -->
+  <meta name="renderer" content="webkit">
+  <!-- 实现响应式的设置 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap的工具提示</title>
+  <!-- 引入 Bootstrap 的 CSS 文件 -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- 
+    IE 9版本之前的 IE 浏览器并不支持 HTML 5 提供的新标签
+    通过 html5shiv.js 文件实现兼容
+-->
+  <!-- 
+    IE 9版本之前的 IE 浏览器并不支持 CSS 3 提供的媒体查询
+    通过 respond.js 文件实现兼容
+-->
+  <!--[if lt IE 9]>
+<script src="js/html5shiv.min.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+  <style>
+    body {
+      padding-top : 100px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <!--  TODO 工具提示插件
+        TODO * title属性 - 设置提示内容
+        TODO * data-toggle属性 - 实现动态交互
+        TODO   data-toggle="tooltip"
+        TODO * data-placement属性 - 设置工具提示显示的方向
+        TODO   * left - 左弹出
+        TODO   * top - 上
+        TODO   * right - 右
+        TODO   * bottom - 下
+        TODO 工具提示是特殊插件
+        TODO * 既需要使用 data-* 属性
+        TODO * 还需要通过 JavaScript 代码
+  -->
+  <button
+    title="这是一个工具提示内容"
+    data-toggle="tooltip"
+    data-placement="top"
+    class="btn btn-default">
+    工具提示
+  </button>
+</div>
+
+<!-- 引入 jQuery 文件 -->
+<script src="js/jquery-1.11.3.js"></script>
+<!-- 引入 Bootstrap 的 JS 文件 -->
+<script src="js/bootstrap.min.js"></script>
+<script>
+  /*
+      TODO 1. 获取 HTML 页面的元素
+      TODO 2. 调用 Bootstrap 提供的 tooltip();
+   */
+  $("button").tooltip();
+</script>
+</body>
+</html>

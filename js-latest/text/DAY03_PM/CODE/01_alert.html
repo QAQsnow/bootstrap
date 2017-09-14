@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <!-- 让 Bootstrap 兼容 IE 兼容模型 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- 让 Bootstrap 兼容 国产浏览器的高速模型 -->
+  <meta name="renderer" content="webkit">
+  <!-- 实现响应式的设置 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap警告框</title>
+  <!-- 引入 Bootstrap 的 CSS 文件 -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- 
+    IE 9版本之前的 IE 浏览器并不支持 HTML 5 提供的新标签
+    通过 html5shiv.js 文件实现兼容
+-->
+  <!-- 
+    IE 9版本之前的 IE 浏览器并不支持 CSS 3 提供的媒体查询
+    通过 respond.js 文件实现兼容
+-->
+  <!--[if lt IE 9]>
+<script src="js/html5shiv.min.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+  <style>
+    body {
+      padding-top : 100px;
+    }
+    #alert {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <!-- TODO 警告框 -->
+      <div class="alert alert-info">
+        这是一个信息提示框.
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <!-- TODO 警告框 -->
+    <div class="col-sm-6 alert alert-warning">
+      这是一个信息提示框.
+    </div>
+  </div>
+  <div class="row">
+    <!-- TODO 可关闭的警告框
+         TODO * 为容器元素添加 class 为 .alert-dismissible
+         TODO * 在容器元素内添加以下 元素
+         TODO   <button class="close">
+         TODO      <span>&times;</span>
+         TODO   </button>按钮
+         TODO * 为<button>按钮添加交互效果
+         TODO   * data-dismiss="alert"
+    -->
+    <div class="alert alert-success alert-dismissible">
+      这是一个可关闭的警告框.
+      <button data-dismiss="alert" class="close">
+        <span>&times;</span>
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <!-- TODO 动态显示警告框的按钮 -->
+    <button class="btn btn-danger">
+      打开警告框
+    </button>
+    <br/><br/>
+    <!-- TODO 用于显示的警告框 -->
+    <div id="alert" class="alert alert-danger alert-dismissible">
+      <button class="close" data-dismiss="alert">
+        <span>&times;</span>
+      </button>
+      这是通过按钮动态显示的警告框.
+    </div>
+    <script>
+      // 通过按钮的onclick事件动态显示警告框
+    </script>
+  </div>
+  <div class="row">
+    <div class="alert alert-danger alert-dismissible">
+      <button data-dismiss="alert" class="close">
+        <span>&times;</span>
+      </button>
+      <!-- TODO 错误提示内容-->
+      <span class="glyphicon glyphicon-alert"></span>
+      你当前的浏览器版本过低，请及时
+      <a class="alert-link" href="#">更新</a>！
+    </div>
+  </div>
+</div>
+
+
+<!-- 引入 jQuery 文件 -->
+<script src="js/jquery-1.11.3.js"></script>
+<!-- 引入 Bootstrap 的 JS 文件 -->
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

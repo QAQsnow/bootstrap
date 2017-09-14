@@ -1,0 +1,97 @@
+/* this is css. */
+// this is less.
+
+// TODO 1.变量
+@nice-blue : #5B83AD;
+
+#header {
+  color : @nice-blue;
+}
+
+#body {
+  background-color : @nice-blue;
+}
+
+// TODO 2. 混合
+// TODO 会被重复使用的CSS属性设置
+.bordered {
+  border-top : dotted 1px black;
+  border-bottom : solid 1px black;
+}
+#menu a {
+  color : #111;
+  .bordered;
+}
+.post a {
+  color : red;
+  .bordered;
+}
+
+// TODO 3. 带参的混合(设置参数的默认值)
+.border-radius (@radius : 5px) {
+  border-radius: @radius;
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+}
+#header {
+  .border-radius(4px);
+}
+.button {
+  .border-radius();
+}
+
+// TODO 4. 特殊对象 @arguments 包含了所有传递的参数
+.my-color (@blur : 1px, @a : solid, @color : black) {
+  border : @arguments;
+}
+#body {
+  .my-color();
+}
+
+/* TODO 5. 嵌套
+#header {
+  color : black;
+}
+#header .nav {
+  font-size: 15px;
+}
+#header .logo {
+  width : 300px;
+}
+#header .logo:hover {
+  text-decoration: none;
+}*/
+#header {
+  color : black;
+  .nav {
+    font-size: 15px;
+  }
+  .logo {
+    width : 300px;
+    // TODO 串联选择器 "&"
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+// TODO 6. 计算(+ - * / %)
+@screen-width : 992px;
+
+.col-md-1 {
+  width : floor(@screen-width/12);
+}
+
+// TODO 7. 提供很多内置的函数(Color函数为例)
+@color : red;
+@lightcolor : lighten(@color,10%);
+@darkcolor : darken(@color,10%);
+
+/*
+  TODO 8. 导入Less文件
+  TODO   @import "path"
+  TODO Less与CSS的@import的区别
+  TODO * CSS的@import - 运行时加载多个CSS文件
+  TODO * Less的@import - 只会生成一个CSS文件
+*/
+@import "style.less";
